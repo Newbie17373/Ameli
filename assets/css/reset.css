@@ -1,0 +1,34 @@
+.body,
+* {
+  margin: 0;
+  padding: 0;
+  transition: all 0.185ms linear 0s;
+  letter-spacing: 0.025rem;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+
+a,
+li,
+ol,
+ul {
+  list-style-type: none;
+  text-decoration: none;
+  color: inherit;
+}
+
+a:visited,
+a:active,
+button {
+  color: inherit;
+  text-decoration: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+}

@@ -1,0 +1,16 @@
+:root {
+  --font-color: #fff;
+  --theme-panel: #111215;
+  --black: #000;
+  --theme-panel-border: #1e1e1e;
+  --theme-selected-circle-border: #37383b;
+  --red-circle: #ef493e;
+  --purple-circle: #4c4acf;
+  --subpurple-color: #9694ff;
+  --prices-bg: #6967e2;
+  --desctiption-text-color: #a6a6a6;
+  --grey-border: #46474a;
+  --green-circle: #34d594;
+  --blue: #52dbff;
+  --pink: #fe58e3;
+}
