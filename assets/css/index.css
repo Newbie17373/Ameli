@@ -494,8 +494,9 @@
 
 .reviews__inside {
   padding: 80px 160px 42px 160px;
-  overflow-x: hidden;
+  overflow: hidden;
   height: 100%;
+  -ms-overflow-style: none;
 }
 
 .reviews__heading {
@@ -508,10 +509,14 @@
   justify-content: flex-start;
   gap: 24px;
   height: 100%;
-  overflow-x: auto;
+  overflow: overlay;
   -ms-overflow-style: none;
   scrollbar-width: none;
   padding: 0 17px;
+}
+
+.reviews__list::-webkit-scrollbar {
+  width: 0;
 }
 
 .reviews__list-item {
@@ -621,6 +626,10 @@
   gap: 23px;
   border-radius: 40px;
   width: 100%;
+}
+
+.work__list::-webkit-scrollbar {
+  width: 0;
 }
 
 .work__list-item {
