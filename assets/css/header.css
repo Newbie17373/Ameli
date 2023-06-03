@@ -37,14 +37,18 @@
 }
 
 .header__part_left {
-  z-index: 5;
-  position: relative;
   width: 43.3333333333%;
 }
 
 @media (max-width: 1200px) {
   .header__part_left {
     width: 100%;
+    position: relative;
+    z-index: 5;
+    backdrop-filter: blur(16px);
+    box-shadow: 0px 4px 6px -1px rgba(0, 0, 0, 0.1),
+      0px 2px 4px -2px rgba(0, 0, 0, 0.1);
+    background: rgba(0, 0, 0, 0.7);
   }
 }
 
@@ -68,7 +72,8 @@
     justify-content: center;
     background-color: var(--black);
     z-index: 1;
-    gap: 100px;
+    gap: 50px;
+    overflow-y: scroll;
   }
 
   .header__part_mid.active {
@@ -92,7 +97,7 @@
     flex-direction: column;
     height: fit-content;
     width: 90%;
-    gap: 80px;
+    gap: 70px;
   }
 }
 
@@ -127,10 +132,10 @@
   .header__list {
     flex-direction: column;
     font-size: 1.7rem;
-    gap: 80px;
+    gap: 34px;
     height: fit-content;
     justify-content: center;
-    padding-top: 50px;
+    padding-top: 80px;
   }
 }
 
