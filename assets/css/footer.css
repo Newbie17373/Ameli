@@ -4,6 +4,13 @@ footer {
   justify-content: center;
   width: 100%;
   background-color: var(--theme-panel);
+  padding: 20px 92px 20px 116px;
+}
+
+@media (max-width: 768px) {
+  .footer {
+    padding: 20px 20px 20px 40px;
+  }
 }
 
 .footer__inside {
@@ -11,8 +18,16 @@ footer {
   align-items: center;
   justify-content: space-between;
   width: 100%;
-  padding: 20px 92px 20px 116px;
+  padding-left: 40px;
+  padding-bottom: 34px;
   gap: 40px;
+}
+
+@media (max-width: 768px) {
+  .footer__inside {
+    padding: 0;
+    flex-direction: column;
+  }
 }
 
 .footer__part {
@@ -35,8 +50,14 @@ footer {
   justify-content: center;
   width: 100%;
   flex-direction: column;
-  padding: 0 187px 0 40px;
+  padding: 0 0px 0 40px;
   gap: 16px;
+}
+
+@media (max-width: 768px) {
+  .footer__basic {
+    padding: 0;
+  }
 }
 
 .footer__logo {
@@ -78,6 +99,7 @@ footer {
   line-height: 1.25rem;
   font-weight: 600;
   text-align: left;
+  flex-wrap: wrap;
 }
 
 .footer__list-item {

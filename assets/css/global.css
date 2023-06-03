@@ -36,3 +36,9 @@ body.scroll_off {
     max-width: 1920px;
   }
 }
+
+@media (max-width: 1200px) {
+  .container {
+    max-width: calc(1380 / 1512 * 100%);
+  }
+}

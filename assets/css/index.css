@@ -44,6 +44,15 @@
   line-height: 6rem;
 }
 
+@media (max-width: 576px) {
+  .intro__heading {
+    font-size: 2.375rem;
+    line-height: 3rem;
+    overflow-wrap: break-word;
+    white-space: normal;
+  }
+}
+
 .intro__heading span {
   color: var(--purple-circle);
 }
@@ -156,6 +165,13 @@
   line-height: 5.375rem;
 }
 
+@media (max-width: 576px) {
+  .prices__heading {
+    font-size: 2.4375rem;
+    line-height: 2.375rem;
+  }
+}
+
 .prices__subtitle {
   font-size: 1.125rem;
   line-height: 1.75rem;
@@ -168,12 +184,31 @@
   align-items: center;
   justify-content: space-between;
   gap: 32px;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 1200px) {
+  .prices__list {
+    justify-content: center;
+  }
 }
 
 .prices__list-item {
   background-color: var(--theme-panel);
   padding: 18px 52px 18px 16px;
   border-radius: 6px;
+}
+
+@media (max-width: 1200px) {
+  .prices__list-item {
+    width: 70%;
+  }
+}
+
+@media (max-width: 576px) {
+  .prices__list-item {
+    width: 100%;
+  }
 }
 
 .prices__title {
@@ -223,11 +258,15 @@
   gap: 55px;
   width: 100%;
   padding: 0 40px;
+  flex-wrap: wrap;
 }
 
 .technologies__list-item {
   height: 66px;
   aspect-ratio: 1/1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .technologies__image {
@@ -256,6 +295,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-wrap: wrap;
   gap: 32px;
   padding: 0 16px;
 }
@@ -265,12 +305,26 @@
   flex-direction: row-reverse;
 }
 
+@media (max-width: 1200px) {
+  .ad_second .ad__inside,
+  .ad_fourth .ad__inside {
+    flex-direction: row;
+  }
+}
+
 .ad__part {
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
   height: 628px;
+}
+
+@media (max-width: 1200px) {
+  .ad__part {
+    height: fit-content;
+    padding: 5px !important;
+  }
 }
 
 .ad__part_first {
@@ -320,6 +374,13 @@
   letter-spacing: -0.0625rem;
   font-weight: 400;
   margin-bottom: 66.56px;
+}
+
+@media (max-width: 576px) {
+  .ad__title {
+    font-size: 2.4rem;
+    line-height: 2.25rem;
+  }
 }
 
 .ad__description {
@@ -380,8 +441,15 @@
 }
 
 .ad__image {
-  width: 442px;
+  width: 100%;
+  max-width: 442px;
   border-radius: 10px;
+}
+
+@media (max-width: 576px) {
+  .ad__image {
+    width: 100%;
+  }
 }
 
 .ad__image-item {
@@ -403,7 +471,13 @@
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  padding: 108px;
+  padding: 108px 226px 58px 226px;
+}
+
+@media (max-width: 1200px) {
+  .about__inside {
+    padding: 108px 10px 58px 10px;
+  }
 }
 
 .about__heading {
@@ -434,6 +508,13 @@
   font-weight: 400;
 }
 
+@media (max-width: 576px) {
+  .about__title {
+    font-size: 2.4rem;
+    line-height: 2.25rem;
+  }
+}
+
 .about__info {
   font-size: 1.375rem;
   line-height: 2.5rem;
@@ -441,11 +522,27 @@
   margin-bottom: 86px;
 }
 
+@media (max-width: 576px) {
+  .about__info {
+    font-size: 1.275rem;
+    line-height: 2.5rem;
+    overflow-wrap: break-word;
+    white-space: normal;
+  }
+}
+
 .about__list {
   display: flex;
   align-items: flex-start;
   justify-content: center;
   gap: 64px;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 768px) {
+  .about__list {
+    display: none;
+  }
 }
 
 .about__list-item {
@@ -494,8 +591,21 @@
 
 .reviews__inside {
   padding: 80px 160px 42px 160px;
-  overflow-x: hidden;
+  overflow: hidden;
   height: 100%;
+  -ms-overflow-style: none;
+}
+
+@media (max-width: 1200px) {
+  .reviews__inside {
+    padding: 80px 12px 42px 12px;
+  }
+}
+
+@media (max-width: 576px) {
+  .reviews__inside {
+    padding: 80px 0px 42px 0px;
+  }
 }
 
 .reviews__heading {
@@ -508,10 +618,21 @@
   justify-content: flex-start;
   gap: 24px;
   height: 100%;
-  overflow-x: auto;
+  overflow: overlay;
   -ms-overflow-style: none;
   scrollbar-width: none;
   padding: 0 17px;
+  border-radius: 40px;
+}
+
+@media (max-width: 576px) {
+  .reviews__list {
+    padding: 0 0px;
+  }
+}
+
+.reviews__list::-webkit-scrollbar {
+  width: 0;
 }
 
 .reviews__list-item {
@@ -531,6 +652,14 @@
   font-size: 1.3125rem;
   text-align: left;
   height: 100%;
+}
+
+@media (max-width: 576px) {
+  .reviews__text {
+    line-height: 1.6875rem;
+    font-size: 1.1125rem;
+    padding: 5px;
+  }
 }
 
 .reviews__border {
@@ -599,10 +728,15 @@
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  padding: 0 5px;
   overflow-x: hidden;
   width: 100%;
   padding: 0 36px;
+}
+
+@media (max-width: 576px) {
+  .works__inside {
+    padding: 0;
+  }
 }
 
 .work__header {
@@ -623,6 +757,16 @@
   width: 100%;
 }
 
+@media (max-width: 576px) {
+  .work__list {
+    padding: 0;
+  }
+}
+
+.work__list::-webkit-scrollbar {
+  width: 0;
+}
+
 .work__list-item {
   border-radius: 40px;
   display: flex;
@@ -641,6 +785,7 @@
   width: 401px;
   height: 401px;
   overflow: hidden;
+  border-radius: 41px;
 }
 
 .work__image {
@@ -659,7 +804,7 @@
 
 .work__desc {
   background-color: var(--purple-circle);
-  border-radius: 0 0 40px 40px;
+  border-radius: 5px 5px 40px 40px;
   width: 100%;
   min-height: 120px;
   display: flex;
@@ -701,6 +846,12 @@
   margin-bottom: 88px;
 }
 
+@media (max-width: 1200px) {
+  .contacts {
+    padding: 78px 0px;
+  }
+}
+
 .contacts__inside {
   width: 100%;
   display: flex;
@@ -724,6 +875,18 @@
   gap: 60px;
 }
 
+@media (max-width: 1200px) {
+  .contacts__content {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 576px) {
+  .contacts__content {
+    padding: 0 5px;
+  }
+}
+
 .contacts__info {
   display: flex;
   align-items: start;
@@ -731,6 +894,14 @@
   flex-direction: column;
   height: 100%;
   gap: 48px;
+}
+
+@media (max-width: 1200px) {
+  .contacts__info {
+    text-align: center;
+    width: 100%;
+    align-items: center;
+  }
 }
 
 .contacts__address,
@@ -747,8 +918,27 @@
   line-height: 3.25rem;
 }
 
+@media (max-width: 1200px) {
+  .contacts__title {
+    align-self: center;
+  }
+}
+
+@media (max-width: 576px) {
+  .contacts__title {
+    font-size: 2rem;
+    line-height: 2.25rem;
+  }
+}
+
 .contacts__description {
   margin: 0;
+}
+
+@media (max-width: 1200px) {
+  .contacts__description {
+    text-align: center;
+  }
 }
 
 .contacts__telephone {
@@ -757,6 +947,12 @@
 .contacts__map {
   border-radius: 13px;
   width: 53%;
+}
+
+@media (max-width: 1200px) {
+  .contacts__map {
+    width: 100%;
+  }
 }
 
 .contacts__map-item {

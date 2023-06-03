@@ -32,3 +32,17 @@ button {
   border: none;
   cursor: pointer;
 }
+
+header,
+footer {
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+}
+
+*::selection,
+*::-moz-selection {
+  /* color: ; */
+  background-color: var(--selection-clr);
+}
