@@ -139,6 +139,12 @@
   }
 }
 
+@media (max-height: 576px) {
+  .header__list {
+    padding-top: 300px;
+  }
+}
+
 .header__list-item {
   height: 100%;
   display: flex;
