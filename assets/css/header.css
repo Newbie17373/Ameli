@@ -149,7 +149,7 @@
   }
 }
 
-@media (max-height: 576px) {
+@media (max-height: 576px) and (max-width: 576px) {
   .header__list {
     padding-top: 400px;
   }
