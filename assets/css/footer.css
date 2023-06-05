@@ -76,7 +76,7 @@ footer {
 .footer___docs {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: start;
   width: 100%;
   gap: 22.78px;
   font-size: 0.8125rem;

@@ -11,6 +11,7 @@ body {
   height: 100%;
   color: var(--font-color);
   scroll-behavior: smooth;
+  background-color: var(--black);
 }
 
 body.scroll_off {
@@ -24,6 +25,7 @@ body.scroll_off {
   flex-direction: column;
   min-height: 100%;
   position: relative;
+  scroll-behavior: smooth;
 }
 
 .container {

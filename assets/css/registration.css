@@ -1,0 +1,156 @@
+@import url(./reset.css);
+@import url(./fonts.css);
+@import url(./global.css);
+@import url(./variables.css);
+@import url(./header.css);
+@import url(./footer.css);
+@import url(./index.css);
+
+body {
+  background-color: var(--theme-panel);
+}
+
+.main {
+  margin: 0;
+  height: 100%;
+  overflow-x: hidden;
+}
+
+.registration {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.registration__inside {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 20%;
+  position: relative;
+}
+
+@media (max-width: 1400px) {
+  .registration__inside {
+    width: 35%;
+  }
+}
+
+@media (max-width: 768px) {
+  .registration__inside {
+    width: 50%;
+  }
+}
+
+@media (max-width: 576px) {
+  .registration__inside {
+    width: 100%;
+  }
+}
+
+.registation__close {
+  display: block;
+  position: absolute;
+  top: -1%;
+  right: -1%;
+  line-height: 1.8rem;
+  width: auto;
+  font-size: 3.5rem;
+  aspect-ratio: 1/1;
+}
+
+.registation__close:hover {
+  color: var(--subpurple-color);
+}
+
+.registration__logo {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.registration__logo-item {
+  max-width: 100%;
+}
+
+.registration__border {
+  height: 1px;
+  width: 100%;
+  background-color: var(--border-stick);
+  margin: 9px 0px;
+}
+
+.registration__subtitle {
+  font-size: 1rem;
+  line-height: 1.575rem;
+  font-weight: 400;
+}
+
+.registration__form {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.registration__text {
+  font-size: 1rem;
+  width: 100%;
+  text-align: left;
+  margin-top: 0.5rem;
+}
+
+.registration__text_first {
+  margin: 0;
+}
+
+.registration__input {
+  width: 100%;
+  margin-top: 0.5rem;
+  height: 32px;
+  border-radius: 6px;
+  padding: 0 10.5px;
+  font-weight: 400;
+  font-size: 0.75rem;
+  background-color: var(--input-clr);
+}
+
+.registration__input:hover {
+  background-color: var(--input-clr-hover);
+}
+
+.registration__input:focus {
+  background-color: var(--input-clr-hover);
+  outline: 1px solid var(--subpurple-color);
+}
+
+.registration__button {
+  margin-top: 1rem;
+  border-radius: 6px;
+  background-color: var(--prices-bg);
+  height: 32px;
+  width: 100%;
+  font-weight: 700;
+  font-size: 0.75rem;
+}
+
+.registration__button:hover {
+  background-color: var(--link-clr);
+}
+
+.registration__link {
+  margin-top: 1rem;
+}
+
+.registration__link-item {
+  color: var(--link-clr) !important;
+}
+
+.registration__link-item:hover {
+  text-decoration: underline solid;
+}
