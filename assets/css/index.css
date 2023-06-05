@@ -2,8 +2,10 @@
 @import url(./fonts.css);
 @import url(./global.css);
 @import url(./variables.css);
+@import url(./popup.css);
 @import url(./header.css);
 @import url(./footer.css);
+@import url(./registration.css);
 
 .main {
   width: 100%;
