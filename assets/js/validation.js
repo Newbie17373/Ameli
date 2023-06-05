@@ -7,9 +7,6 @@ let counter = 0;
 if (counter === 0) {
   for (i = 0; i < arrInputs.length; i++) {
     arrInputs[i].value.length < 1 ? counter++ : counter--;
-    console.log(arrInputs[i].value);
-    console.log(typeof arrInputs[i].value);
-    console.log(counter);
   }
 
   counter === -arrInputs.length
@@ -23,9 +20,6 @@ for (i = 0; i < arrInputs.length; i++) {
     counter = 0;
     for (i = 0; i < arrInputs.length; i++) {
       arrInputs[i].value.length < 1 ? counter++ : counter--;
-      console.log(arrInputs[i].value);
-      console.log(typeof arrInputs[i].value);
-      console.log(counter);
     }
     counter === -arrInputs.length && pass.value === passRepeat.value
       ? ((regBtn.disabled = false), console.log("just do it"))
