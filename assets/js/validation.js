@@ -26,3 +26,13 @@ for (i = 0; i < arrInputs.length; i++) {
       : (regBtn.disabled = true);
   });
 }
+
+passRepeat.addEventListener("change", () => {
+  counter === -arrInputs.length && pass.value === passRepeat.value
+    ? ((regBtn.disabled = false),
+      alert(
+        "Все поля формы заполнены верно, кнопка регистрации разблокирована."
+      ))
+    : ((regBtn.disabled = true),
+      alert("Поля формы пустые и/или неправильно введен пароль."));
+});

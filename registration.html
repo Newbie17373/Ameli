@@ -19,20 +19,20 @@
                         </div>
                         <div class="registration__border"></div>
                         <h5 class="registration__subtitle about__title">Регистрация</h5>
-                        <form action="" class="registration__form" method="get">
+                        <form action="" name="registrationForm" class="registration__form" method="post">
                             <p class="registration__text registration__text_first prices__description">Ваш логин</p>
-                            <input type="text" class="registration__input" name="login" placeholder="example" pattern="[A-Za-z]{9-40}" minlength="9" maxlength="40" required value="">
+                            <input type="text" class="registration__input" name="login" placeholder="example" required pattern="[A-Za-z]{9-40}" minlength="9" maxlength="40" value="">
                             <p class="registration__text prices__description">Ваша почта</p>
-                            <input type="email" class="registration__input" name="email" placeholder="example@gmail.com" pattern="[A-Za-z]{9-60}" minlength="9" maxlength="60" required value="">
+                            <input type="email" class="registration__input" name="email" placeholder="example@gmail.com" required pattern="[A-Za-z]{9-60}" minlength="9" maxlength="60" value="">
                             <p class="registration__text prices__description">Ваше имя</p>
-                            <input type="text" class="registration__input" name="name" placeholder="Александр" pattern="[А-Яа-я]{3-40}" minlength="3" maxlength="40" required value="">
+                            <input type="text" class="registration__input" name="name" placeholder="Александр" required pattern="[А-Яа-я]{3-40}" minlength="3" maxlength="40" value="">
                             <p class="registration__text prices__description">Ваша фамилия</p>
-                            <input type="text" class="registration__input" name="surname" placeholder="Иванов" pattern="[А-Яа-я]{7-40}" minlength="7" maxlength="40" required value="">
+                            <input type="text" class="registration__input" name="surname" placeholder="Иванов" required pattern="[А-Яа-я]{7-40}" minlength="7" maxlength="40"  value="">
                             <p class="registration__text prices__description">Ваш пароль</p>
-                            <input type="password" class="registration__input registration__input_password" name="password" type="password" placeholder="S9Scap$iDPRZ" pattern="[A-Za-z]{8-16}" minlength="8" maxlength="16" required value="">
+                            <input type="password" class="registration__input registration__input_password" name="password" type="password" placeholder="S9Scap$iDPRZ" required pattern="[A-Za-z]{8-16}" minlength="8" maxlength="16" value="">
                             <p class="registration__text prices__description">Повторите ваш пароль</p>
-                            <input type="password" class="registration__input registration__input_password-repeat" type="password" placeholder="S9Scap$iDPRZ" pattern="[A-Za-z]{8-16}" minlength="8" maxlength="16" required value="">
-                            <button class="registration__button" type="submit">Зарегистрироваться</button>
+                            <input type="password" class="registration__input registration__input_password-repeat" type="password" placeholder="S9Scap$iDPRZ" required pattern="[A-Za-z][0-9]{8-16}" minlength="8" maxlength="16" value="">
+                            <button class="registration__button" >Зарегистрироваться</button>
                             <div class="registration__link">
                                 <span>Уже есть аккаунт? <a href="./authentification.html" class="registration__link-item"><span>Войти.</span></a></span>
                             </div>
