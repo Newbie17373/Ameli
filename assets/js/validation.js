@@ -22,7 +22,7 @@ for (i = 0; i < arrInputs.length; i++) {
       arrInputs[i].value.length < 1 ? counter++ : counter--;
     }
     counter === -arrInputs.length && pass.value === passRepeat.value
-      ? ((regBtn.disabled = false), console.log("just do it"))
-      : ((regBtn.disabled = true), console.log("fuck off bich"));
+      ? (regBtn.disabled = false)
+      : (regBtn.disabled = true);
   });
 }
