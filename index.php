@@ -1,3 +1,4 @@
+<?php session_start();?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,95 +9,16 @@
     <link rel="stylesheet" href="./assets/css/index.css">
     <script src="./assets/js/burger.js" defer></script>
     <script src="./assets/js/popup.js" defer></script>
+    <?php if(isset($_SESSION['login'])) {?><script defer src="./assets/js/popupReviews.js"></script><?php }?>
 </head>
 <body>
-    <div class="wrapper">
-        <div class="order">
-            <div class="order-inside">
-                <a class="order__area"></a>
-                <form action="" class="order__form" method="post">
-                    <a class="order__close registation__close">&#215;</a>
-                    <p class="registration__text registration__text_first prices__description">Ваше имя</p>
-                    <input type="text" class="order__input registration__input" name="user_name" placeholder="Евгений" minlength="3" max-length="20" >
-                    <p class="registration__text prices__description">Ваша почта</p>
-                    <input type="email" class="order__input registration__input" name="user_email" placeholder="example@gmail.com" required minlength="9" max-length="60">
-                    <p class="registration__text prices__description">Запрошиваемя услуга</p>
-                    <select name="" id="" class="order__menu registration__input" name="user__service" value="">
-                        <option value="Контекстная реклама" class="order__option registration__input">Контекстная реклама</option>
-                        <option value="Создание сайтов" class="order__option registration__input" selected>Создание сайтов</option>
-                        <option value="Комплексный аудит" class="order__option registration__input">Комплексный аудит</option>
-                        <option value="Продвижение сайта" class="order__option registration__input">Продвижение сайта</option>
-                    </select>
-                    <p class="registration__text prices__description">Ваш номер телефона</p>
-                    <input type="tel" class="order__input registration__input" name="user_phone" placeholder="89136798698" required pattern="[0-9]{11}">
-                    <input id="button" type="submit" class="order__button registration__button" value="Отправить">
-                </form>
-            </div>
-        </div>
-        <div class="consult">
-            <div class="order-inside">
-                <a class="order__area"></a>
-                <form action="" class="order__form" method="post">
-                    <a class="order__close registation__close">&#215;</a>
-                    <p class="registration__text registration__text_first prices__description">Ваше имя</p>
-                    <input type="text" class="order__input registration__input" name="user_name" placeholder="Евгений" minlength="3" max-length="20" >
-                    <p class="registration__text prices__description">Ваша почта</p>
-                    <input type="email" class="order__input registration__input" name="user_email" placeholder="example@gmail.com" required minlength="9" max-length="60">
-                    <p class="registration__text prices__description">Ваш номер телефона</p>
-                    <input type="tel" class="order__input registration__input" name="user_phone" placeholder="89136798698" required pattern="[0-9]{11}">
-                    <input id="button" type="submit" class="order__button registration__button" value="Отправить">
-                </form>
-            </div>
-        </div>
-        <header class="header">
-            <div class="header__inside container">
-                <div class="header__part header__part_left">
-                    <div class="header__logo">  
-                        <img class="header__logo-item" src="./assets/img/logos/logo.svg" alt="logo">
-                    </div>
-                </div>
-                <div class="header__part header__part_mid">
-                    <nav class="header__nav">
-                        <ul class="header__list">
-                            <li class="header__list-item"><a href="#works" class="header__list-link">Портфолио</a></li>
-                            <li class="header__list-item"><a href="#services" class="header__list-link">Услуги</a></li>
-                            <li class="header__list-item"><a href="#contacts" class="header__list-link">Контакты</a></li>
-                            <li class="header__list-item"><a href="#reviews" class="header__list-link">Отзывы</a></li>
-                        </ul>
-                    </nav>
-                    <div class="header__part header__part_right">
-                        <div class="header__theme">
-                            <ul class="header__theme-list">
-                                <li class="header__theme-item">
-                                    <button class="header__theme-button">
-                                        <div class="header__theme-circle header__theme-circle_green"></div>
-                                    </button>
-                                </li>
-                                <li class="header__theme-item selected">
-                                    <button class="header__theme-button selected">
-                                        <div class="header__theme-circle header__theme-circle_purple selected"></div>
-                                    </button>
-                                </li>
-                                <li class="header__theme-item">
-                                    <button class="header__theme-button">
-                                        <div class="header__theme-circle header__theme-circle_red"></div>
-                                    </button>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="header__personal-area">
-                            <ul class="header__buttons">
-                                <li class="header__buttons-item"><a href="./authentification.html" class="header__button-link"><button class="header__button header__button_sign-in intro__button_colorless">Войти</button></a></li>
-                                <li class="header__buttons-item"><a href="./registration.html" class="header__button-link"><button class="header__button header__button_sign-up intro__button_purple">Регистрация</button></a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="header__burger">
-                    <span></span>
-                </div>
-            </div>
-        </header>
+    <div class="wrapper" id="main">
+        <?php 
+        require './vendor/components/order.php';
+        require './vendor/components/consult.php';
+        require './vendor/components/survey.php';
+        require './vendor/components/header.php';
+        ?>
         <main class="main">
             <div class="main__inside">
                 <div class="intro">
@@ -165,77 +87,77 @@
                         </ul>
                     </div>
                 </div>
-                <div class="ad ad_first">
-                    <div class="ad__inside container">
-                        <div class="ad__part ad__part_first">
-                            <h4 class="ad__heading technologies__heading">реклама в Google и Яндекс</h4>
-                            <h3 class="ad__title">Контекстная реклама.</h3>
-                            <p class="ad__description prices__description">
+                <div class="advertisement advertisement_first">
+                    <div class="advertisement__inside container">
+                        <div class="advertisement__part advertisement__part_first">
+                            <h4 class="advertisement__heading technologies__heading">реклама в Google и Яндекс</h4>
+                            <h3 class="advertisement__subtitle">Контекстная реклама.</h3>
+                            <p class="advertisement__description prices__description">
                                 Контекстная реклама Яндекс. Директ и Google <br> Adwords – это самый быстрый способ привести<br> потенциальных клиентов на Ваш сайт. <br> Контекстная реклама в Google и Яндекс позволит <br> Вам оплачивать только реальные переходы <br> целевых пользователей и отслеживать <br> эффективность расхода бюджета до копейки.
                             </p>
-                            <button class="ad__button button-order">Заказать</button>
+                            <button class="advertisement__button button-order">Заказать</button>
                         </div>
-                        <div class="ad__part ad__part_second">
-                           <div class="ad__frame">
-                            <div class="ad__image">
-                                <img src="./assets/img/wDVYK04l_4x.jpg" alt="" class="ad__image-item">
+                        <div class="advertisement__part advertisement__part_second">
+                           <div class="advertisement__frame">
+                            <div class="advertisement__image">
+                                <img src="./assets/img/wDVYK04l_4x.jpg" alt="" class="advertisement__image-item">
                             </div>                    
                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="ad ad_second">
-                    <div class="ad__inside container">
-                        <div class="ad__part ad__part_first">
-                            <h4 class="ad__heading technologies__heading">разработка</h4>
-                            <h3 class="ad__title">Создание сайта.</h3>
-                            <p class="ad__description prices__description">
+                <div class="advertisement advertisement_second">
+                    <div class="advertisement__inside container">
+                        <div class="advertisement__part advertisement__part_first">
+                            <h4 class="advertisement__heading technologies__heading">разработка</h4>
+                            <h3 class="advertisement__subtitle">Создание сайта.</h3>
+                            <p class="advertisement__description prices__description">
                                 Мы предлагаем не просто разработку сайта, а <br>создание полноценного канала продаж через <br>Интернет, который будет настроен под специфику <br> Вашего бизнеса, независимо от цены <br>разрабатываемого проекта. Создание сайтов для<br> нас - это не просто работа. Мы всегда стремимся <br> вложить максимум своего опыта и умений в <br> проекты наших клиентов, чтобы добиваться <br> внушительных результатов. 
                             </p>
-                            <button class="ad__button button-order">Заказать</button>
+                            <button class="advertisement__button button-order">Заказать</button>
                         </div>
-                        <div class="ad__part ad__part_second">
-                           <div class="ad__frame">
-                            <div class="ad__image">
-                                <img src="./assets/img/midjorney234151_illustration_of_create_websites_473a48ac-9f36-469b-8ee3-00153e30eb8c.png" alt="" class="ad__image-item">
+                        <div class="advertisement__part advertisement__part_second">
+                           <div class="advertisement__frame">
+                            <div class="advertisement__image">
+                                <img src="./assets/img/midjorney234151_illustration_of_create_websites_473a48ac-9f36-469b-8ee3-00153e30eb8c.png" alt="" class="advertisement__image-item">
                             </div>                    
                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="ad ad_third">
-                    <div class="ad__inside container">
-                        <div class="ad__part ad__part_first">
-                            <h4 class="ad__heading technologies__heading">аудит</h4>
-                            <h3 class="ad__title">Комплексный аудит.</h3>
-                            <p class="ad__description prices__description">
+                <div class="advertisement advertisement_third">
+                    <div class="advertisement__inside container">
+                        <div class="advertisement__part advertisement__part_first">
+                            <h4 class="advertisement__heading technologies__heading">аудит</h4>
+                            <h3 class="advertisement__subtitle">Комплексный аудит.</h3>
+                            <p class="advertisement__description prices__description">
                                 Если Ваш сайт не приносит прибыль, нет <br> посетителей и заказов, а на первой странице <br> поисковиков находятся Ваши конкуренты, у Вас <br> проблемы. Выявить и решить их поможет аудит <br> сайта. Заказав аудит сайта, Вы узнаете, что нужно <br> доработать на сайте, чтобы он начал помогать <br> Вашему бизнесу.
                             </p>
-                            <button class="ad__button button-order">Заказать</button>
+                            <button class="advertisement__button button-order">Заказать</button>
                         </div>
-                        <div class="ad__part ad__part_second">
-                           <div class="ad__frame">
-                            <div class="ad__image">
-                                <img src="./assets/img/image_processing20230108-15046-7ds03o.jpg" alt="" class="ad__image-item">
+                        <div class="advertisement__part advertisement__part_second">
+                           <div class="advertisement__frame">
+                            <div class="advertisement__image">
+                                <img src="./assets/img/image_processing20230108-15046-7ds03o.jpg" alt="" class="advertisement__image-item">
                             </div>                    
                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="ad ad_fourth">
-                    <div class="ad__inside container">
-                        <div class="ad__part ad__part_first">
-                            <h4 class="ad__heading technologies__heading">продвижение</h4>
-                            <h3 class="ad__title">Продвижение сайта.</h3>
-                            <p class="ad__description prices__description">
+                <div class="advertisement advertisement_fourth">
+                    <div class="advertisement__inside container">
+                        <div class="advertisement__part advertisement__part_first">
+                            <h4 class="advertisement__heading technologies__heading">продвижение</h4>
+                            <h3 class="advertisement__subtitle">Продвижение сайта.</h3>
+                            <p class="advertisement__description prices__description">
                                 Продвинем ваш сайт в топ-10 Яндекса и Google. <br> Увеличим посещаемость. Увеличим количество <br> звонков и заявок.
                             </p>
-                            <button class="ad__button button-order">Заказать</button>
+                            <button class="advertisement__button button-order">Заказать</button>
                         </div>
-                        <div class="ad__part ad__part_second">
-                           <div class="ad__frame">
-                            <div class="ad__image">
-                                <img src="./assets/img/erhSZdfA_4x.jpg" alt="" class="ad__image-item">
+                        <div class="advertisement__part advertisement__part_second">
+                           <div class="advertisement__frame">
+                            <div class="advertisement__image">
+                                <img src="./assets/img/erhSZdfA_4x.jpg" alt="" class="advertisement__image-item">
                             </div>                    
                            </div>
                         </div>
@@ -322,91 +244,30 @@
                                     </div>
                                 </div>
                             </li>
-                            <li class="reviews__list-item">
-                                <p class="reviews__text">Люблю отчизну я, 
-                                    Но странною любовью.
-                                    Не победит её рассудок мой.
-                                    Ни слава, купленная кровью,
-                                    Ни полный гордого доверия покой,
-                                    Ни темной старины заветные предания
-                                    Не шевелят во мне отрадного мечтания.
-                                    Но я люблю, за что не знаю сам
-                                    Её степей холодное молчание</p>
-                                <div class="reviews__border"></div>
-                                <div class="reviews__user">
-                                    <div class="reviews__user-photo">
-                                        <img src="./assets/img/photo_2023-04-24_00-54-09.jpg" alt="" class="reviews__user-photo-item">
-                                    </div>
-                                    <div class="reviews__userdata">
-                                        <div class="reviews__username">Иван Першин</div>
-                                        <div class="reviews__userservice">Продвижение сайта</div>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="reviews__list-item">
-                                <p class="reviews__text">Люблю отчизну я, 
-                                    Но странною любовью.
-                                    Не победит её рассудок мой.
-                                    Ни слава, купленная кровью,
-                                    Ни полный гордого доверия покой,
-                                    Ни темной старины заветные предания
-                                    Не шевелят во мне отрадного мечтания.
-                                    Но я люблю, за что не знаю сам
-                                    Её степей холодное молчание</p>
-                                <div class="reviews__border"></div>
-                                <div class="reviews__user">
-                                    <div class="reviews__user-photo">
-                                        <img src="./assets/img/photo_2023-04-24_00-54-09.jpg" alt="" class="reviews__user-photo-item">
-                                    </div>
-                                    <div class="reviews__userdata">
-                                        <div class="reviews__username">Иван Першин</div>
-                                        <div class="reviews__userservice">Продвижение сайта</div>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="reviews__list-item">
-                                <p class="reviews__text">Люблю отчизну я, 
-                                    Но странною любовью.
-                                    Не победит её рассудок мой.
-                                    Ни слава, купленная кровью,
-                                    Ни полный гордого доверия покой,
-                                    Ни темной старины заветные предания
-                                    Не шевелят во мне отрадного мечтания.
-                                    Но я люблю, за что не знаю сам
-                                    Её степей холодное молчание</p>
-                                <div class="reviews__border"></div>
-                                <div class="reviews__user">
-                                    <div class="reviews__user-photo">
-                                        <img src="./assets/img/photo_2023-04-24_00-54-09.jpg" alt="" class="reviews__user-photo-item">
-                                    </div>
-                                    <div class="reviews__userdata">
-                                        <div class="reviews__username">Иван Першин</div>
-                                        <div class="reviews__userservice">Продвижение сайта</div>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="reviews__list-item">
-                                <p class="reviews__text">Люблю отчизну я, 
-                                    Но странною любовью.
-                                    Не победит её рассудок мой.
-                                    Ни слава, купленная кровью,
-                                    Ни полный гордого доверия покой,
-                                    Ни темной старины заветные предания
-                                    Не шевелят во мне отрадного мечтания.
-                                    Но я люблю, за что не знаю сам
-                                    Её степей холодное молчание</p>
-                                <div class="reviews__border"></div>
-                                <div class="reviews__user">
-                                    <div class="reviews__user-photo">
-                                        <img src="./assets/img/photo_2023-04-24_00-54-09.jpg" alt="" class="reviews__user-photo-item">
-                                    </div>
-                                    <div class="reviews__userdata">
-                                        <div class="reviews__username">Иван Першин</div>
-                                        <div class="reviews__userservice">Продвижение сайта</div>
-                                    </div>
-                                </div>
-                            </li>
+                            <?php 
+                            require "./vendor/components/connect.php";
+                    
+                            $sql = "SELECT * FROM reviews";
+                            $result = mysqli_query($conn, $sql);
+                    
+                            // Цикл для отображения всех отзывов
+                            foreach ($result as $row) {
+                            echo "<li class='reviews__list-item'>";
+                            echo "<p class='reviews__text'>" . $row['review'] . "</p>";
+                            echo "<div class='reviews__border'></div>";
+                            echo "<div class='reviews__user'>";
+                            echo "<div class='reviews__user-photo'>";
+                            echo "<img src='" . $row['image'] . "' alt='' class='reviews__user-photo-item'>";
+                            echo "</div>";
+                            echo "<div class='reviews__userdata'>";
+                            echo "<div class='reviews__username'>" . $row['nickname'] . "</div>";
+                            echo "<div class='reviews__userservice'>" . $row['service'] . "</div>";
+                            echo "</div>";
+                            echo "</div>";
+                            echo "</li>";
+                    }?>
                         </ul>
+                        <?php if(isset($_SESSION['login'])) {?><button class="reviews__button advertisement__button survey-button">Написать отзыв</button><?php }?>
                     </div>
                 </div>
                 <div class="works" id="works">
@@ -538,9 +399,9 @@
             <div class="footer__inside container">
                 <div class="footer__part footer__part_first">
                     <div class="footer__basic">
-                        <div class="footer__logo">  
+                        <a href="./index.php#main" class="footer__logo">  
                             <img class="footer__logo-item" src="./assets/img/logos/logo.svg" alt="logo">
-                        </div>
+                                </a>
                         <p class="footer__rights">® Амели 2023 - Все права защищены</p>
                         <ul class="footer___docs">
                             <li class="footer__docs-item"><a href="https://policies.google.com/privacy" class="footer__docs-link">Политика конфиденциальности</a></li>
@@ -551,12 +412,12 @@
                 </div>
                 <div class="footer__part footer__part_second">
                     <ul class="footer__list">
+                        <li class="footer__list-item"><a href="#services" class="footer__list-link">Услуги</a></li>
+                        <li class="footer__list-item"><a href="#about" class="footer__list-link">О нас</a></li>   
                         <li class="footer__list-item"><a href="#reviews" class="footer__list-link">Отзывы</a></li>
                         <li class="footer__list-item"><a href="#works" class="footer__list-link">Портфолио</a></li>
-                        <li class="footer__list-item"><a href="#services" class="footer__list-link">Услуги</a></li>
-                        <li class="footer__list-item"><a href="#contacts" class="footer__list-link">Контакты</a></li>
                         <li class="footer__list-item">
-                            <a href="#about" class="footer__list-link">О нас</a>
+                        <a href="#contacts" class="footer__list-link">Контакты</a>
                             <ul class="footer__socials">
                                 <li class="footer__socials-item">
                                     <a href="https://t.me/ameli" class="footer__socials-link">

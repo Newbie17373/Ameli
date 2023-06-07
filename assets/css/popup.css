@@ -1,7 +1,10 @@
 .order,
-.consult {
+.consult,
+.survey {
   width: 100%;
   display: none;
+  opacity: 0%;
+  visibility: collapse;
   align-items: center;
   justify-content: center;
   position: fixed;
@@ -10,11 +13,16 @@
   width: 100%;
   height: 100%;
   z-index: 6;
+  transition: all 0.55s linear 0s;
 }
 
 .order.active,
-.consult.active {
+.consult.active,
+.survey.active {
   display: flex;
+  opacity: 100%;
+  visibility: visible;
+  transition: all 0.55s linear 0s;
 }
 
 .order-inside {
@@ -25,6 +33,7 @@
   width: 100%;
   height: 100%;
   border-radius: 41px;
+  transition: all 0.25s linear 0s;
 }
 
 .order__area {
@@ -50,6 +59,7 @@
   z-index: 6;
   padding: 50px;
   border-radius: 41px;
+  transition: all 0.25s linear 0s;
 }
 
 @media (max-width: 1400px) {
@@ -69,8 +79,18 @@
   right: 5% !important;
 }
 
+.order__textarea {
+  min-height: 168px !important;
+  max-width: 100%;
+  min-width: 90%;
+  max-height: 250px;
+  color: var(--desctiption-text-color);
+  font-family: inherit;
+  line-height: inherit;
+}
+
 .order__input {
-  width: 80%;
+  width: 100%;
   font-size: 1rem !important;
   line-height: 1rem !important;
 }

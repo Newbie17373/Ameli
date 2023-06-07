@@ -14,6 +14,7 @@ body {
   margin: 0;
   height: 100%;
   overflow-x: hidden;
+  width: 100%;
 }
 
 .registration {
@@ -36,6 +37,7 @@ body {
 @media (max-width: 1400px) {
   .registration__inside {
     width: 35%;
+    padding-top: 20px;
   }
 }
 
@@ -51,16 +53,34 @@ body {
   }
 }
 
+@media (max-height: 576px) and (max-width: 676px) {
+  .registration__inside {
+    padding-top: 350px;
+  }
+}
+
 .registation__close {
   display: block;
   position: absolute;
-  top: -1%;
-  right: -1%;
+  top: -2px;
+  right: -2px;
   line-height: 1.8rem;
   width: auto;
   font-size: 3.5rem;
   cursor: pointer;
   aspect-ratio: 1/1;
+}
+
+@media (max-width: 1400px) {
+  .registation__close {
+    padding-top: 20px;
+  }
+}
+
+@media (max-height: 576px) and (max-width: 676px) {
+  .registation__close {
+    padding-top: 350px;
+  }
 }
 
 .registation__close:hover {
@@ -89,6 +109,7 @@ body {
   font-size: 1rem;
   line-height: 1.575rem;
   font-weight: 400;
+  margin-bottom: 5px;
 }
 
 .registration__form {
@@ -97,6 +118,20 @@ body {
   align-items: center;
   justify-content: center;
   flex-direction: column;
+}
+
+.registration__msg {
+  margin: 10px 0;
+  font-size: 1rem;
+  text-decoration: underline solid;
+}
+
+.registration__msg_successful {
+  color: var(--green-circle);
+}
+
+.registration__msg_unsuccessful {
+  color: var(--red-circle);
 }
 
 .registration__text {
@@ -145,7 +180,7 @@ body {
 }
 
 .registration__link {
-  margin-top: 1rem;
+  margin-top: 0.7rem;
 }
 
 .registration__link-item {
