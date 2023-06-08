@@ -37,7 +37,7 @@ body {
 @media (max-width: 1400px) {
   .registration__inside {
     width: 35%;
-    padding-top: 20px;
+    padding-top: 80px;
   }
 }
 
@@ -62,8 +62,8 @@ body {
 .registation__close {
   display: block;
   position: absolute;
-  top: -2px;
-  right: -2px;
+  top: -10px;
+  right: -15px;
   line-height: 1.8rem;
   width: auto;
   font-size: 3.5rem;
@@ -73,13 +73,14 @@ body {
 
 @media (max-width: 1400px) {
   .registation__close {
-    padding-top: 20px;
+    padding-top: 80px;
   }
 }
 
 @media (max-height: 576px) and (max-width: 676px) {
   .registation__close {
     padding-top: 350px;
+    right: -30px;
   }
 }
 

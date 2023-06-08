@@ -681,6 +681,8 @@ body {
   font-size: 1.3125rem;
   text-align: left;
   height: 100%;
+  word-wrap: normal;
+  word-break: break-all;
 }
 
 @media (max-width: 576px) {

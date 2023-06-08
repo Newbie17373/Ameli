@@ -33,6 +33,7 @@
                         $_SESSION['surname'] = $user['surname'];
                         $_SESSION['email'] = $user['email'];
                         $_SESSION['nickname'] = $user['nickname'];
+                        $_SESSION['user_photo'] = $user['user_photo'];
                         $smsg = "Вы успешно вошли";
                     }
                     else {

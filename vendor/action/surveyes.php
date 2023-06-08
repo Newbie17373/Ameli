@@ -1,26 +1,71 @@
 <?php
 session_start();
 require "../components/connect.php";
-if(isset($_POST['reviews_text']) && isset($_POST['user_photo']) && isset($_POST['user_service'])) {
-    $reviews_text = $_POST['reviews_text'];
-    $user_photo = $_POST['user_photo'];
-    $user_service = $_POST['user_service'];
 
-    $sql = "INSERT INTO reviews (login, review, image, service, nickname) VALUES (?, ?, ?, ?, ?)";
-    $stmt = mysqli_prepare($conn, $sql);
-    mysqli_stmt_bind_param($stmt, 'sssss', $_SESSION['login'], $reviews_text, $user_photo, $user_service, $_SESSION['nickname']);
-    mysqli_stmt_execute($stmt);
-    
-    // Проверка наличия ошибок при выполнении запроса
-    if (mysqli_error($conn)) {
-        die("Error: " . mysqli_error($conn));
+// Проверка, прошло ли 20 минут с момента последнего отзыва
+function isAllowedToPostReview($lastReviewTime) {
+    if (!$lastReviewTime) {
+        // Если нет предыдущих отзывов, разрешаем публикацию
+        return true;
     }
+
+    $currentTime = time();
+    $lastReviewTimestamp = strtotime($lastReviewTime);
+    $interval = 20 * 60; // Интервал в секундах (20 минут)
+
+    return ($currentTime - $lastReviewTimestamp) >= $interval;
+}
+
+if (isset($_POST['reviews_text']) && isset($_POST['user_service'])) {
+    $reviews_text = filter_var($_POST['reviews_text'], FILTER_SANITIZE_STRING);
+    $user_service = filter_var($_POST['user_service'], FILTER_SANITIZE_STRING);
     
-    // Закрытие соединения с базой данных
-    mysqli_close($conn);
+    $login = $_SESSION['login'];
+    $nickname = $_SESSION['nickname'];
+    $user_photo = $_SESSION['user_photo'];
+
+   
+
+    // Проверка на количество отзывов пользователя
+    $query = "SELECT count FROM users WHERE login = ?";
+    $stmt = $pdo->prepare($query);
+    $stmt->execute([$login]);
+    $row = $stmt->fetch(PDO::FETCH_ASSOC);
+    $reviewCount = $row['count'];
+
+    if ($reviewCount >= 4) {
+        die(require '../components/alert_second.php');
+    }   
+
+    // Проверка временного интервала между отзывами
+    $query = "SELECT last_review_time FROM users WHERE login = ?";
+    $stmt = $pdo->prepare($query);
+    $stmt->execute([$login]);
+    $row = $stmt->fetch(PDO::FETCH_ASSOC);
+    $lastReviewTime = $row['last_review_time'];
+
+    if (!isAllowedToPostReview($lastReviewTime)) {
+        die(require '../components/alert.php');
+    }
+
+    // Добавление отзыва в таблицу `reviews`
+    $query = "INSERT INTO reviews (login, review, image, service, nickname) VALUES (?, ?, ?, ?, ?)";
+    $stmt = $pdo->prepare($query);
+    $stmt->execute([$login, $reviews_text, $user_photo, $user_service, $nickname]);
+
+    // Увеличение счетчика отзывов пользователя
+    $query = "UPDATE users SET count = count + 1 WHERE login = ?";
+    $stmt = $pdo->prepare($query);
+    $stmt->execute([$login]);
+
+    // Обновление времени последнего отзыва пользователя
+    $query = "UPDATE users SET last_review_time = CURRENT_TIMESTAMP WHERE login = ?";
+    $stmt = $pdo->prepare($query);
+    $stmt->execute([$login]);
 
     // Перенаправление после выполнения операции
     header('Location: ../../index.php');
     exit;
 }
 ?>
+
