@@ -592,7 +592,7 @@ body {
   align-items: center;
   justify-content: center;
   width: 100%;
-  background: url(../img/AztpQfyT_4x.jpg) 0 0 / cover no-repeat scroll;
+  background: url(../img/AztpQfyT_4x.webp) 0 0 / cover no-repeat scroll;
   height: 100%;
   margin-bottom: 128px;
 }
@@ -682,7 +682,7 @@ body {
   text-align: left;
   height: 100%;
   word-wrap: normal;
-  word-break: break-all;
+  overflow-wrap: anywhere;
 }
 
 @media (max-width: 576px) {

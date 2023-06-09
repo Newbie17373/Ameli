@@ -61,9 +61,9 @@ body {
 
 .registation__close {
   display: block;
-  position: absolute;
-  top: -10px;
-  right: -15px;
+  position: relative;
+  top: 0px;
+  right: -50%;
   line-height: 1.8rem;
   width: auto;
   font-size: 3.5rem;
@@ -73,14 +73,11 @@ body {
 
 @media (max-width: 1400px) {
   .registation__close {
-    padding-top: 80px;
   }
 }
 
 @media (max-height: 576px) and (max-width: 676px) {
   .registation__close {
-    padding-top: 350px;
-    right: -30px;
   }
 }
 

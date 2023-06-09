@@ -100,7 +100,7 @@
                         <div class="advertisement__part advertisement__part_second">
                            <div class="advertisement__frame">
                             <div class="advertisement__image">
-                                <img src="./assets/img/wDVYK04l_4x.jpg" alt="" class="advertisement__image-item">
+                                <img src="./assets/img/wDVYK04l_4x.webp" alt="" class="advertisement__image-item">
                             </div>                    
                            </div>
                         </div>
@@ -119,7 +119,7 @@
                         <div class="advertisement__part advertisement__part_second">
                            <div class="advertisement__frame">
                             <div class="advertisement__image">
-                                <img src="./assets/img/midjorney234151_illustration_of_create_websites_473a48ac-9f36-469b-8ee3-00153e30eb8c.png" alt="" class="advertisement__image-item">
+                                <img src="./assets/img/midjorney234151_illustration_of_create_websites_473a48ac-9f36-469b-8ee3-00153e30eb8c.webp" alt="" class="advertisement__image-item">
                             </div>                    
                            </div>
                         </div>
@@ -138,7 +138,7 @@
                         <div class="advertisement__part advertisement__part_second">
                            <div class="advertisement__frame">
                             <div class="advertisement__image">
-                                <img src="./assets/img/image_processing20230108-15046-7ds03o.jpg" alt="" class="advertisement__image-item">
+                                <img src="./assets/img/image_processing20230108-15046-7ds03o.webp" alt="" class="advertisement__image-item">
                             </div>                    
                            </div>
                         </div>
@@ -157,7 +157,7 @@
                         <div class="advertisement__part advertisement__part_second">
                            <div class="advertisement__frame">
                             <div class="advertisement__image">
-                                <img src="./assets/img/erhSZdfA_4x.jpg" alt="" class="advertisement__image-item">
+                                <img src="./assets/img/erhSZdfA_4x.webp" alt="" class="advertisement__image-item">
                             </div>                    
                            </div>
                         </div>
@@ -198,11 +198,11 @@
                         <h4 class="reviews__heading technologies__heading">Наши отзывы</h4>
                         <ul class="reviews__list">
                             <li class="reviews__list-item">
-                                <p class="reviews__text">As a product manager sometimes you need to “design” a little to express your ideas more clearly to the team. I used to make poorly-designed “wireframes” that where too basic to be used on a presentation. To use Figma or other tools will take too much time. For that reason Aaply is the perfect choice for me, because it allows me to do so easily, generating a nice prototype without much effort.</p>
+                                <p class="reviews__text">Достаточно продолжительное время искали хорошую, ответственную компанию по аудиту нашего сайта и привлечения потока клиентов. Такую, чтобы там были специалисты по всем профилям. Хотелось, чтобы люди знали своё дело, но в то же время могли нам, простым обывателям, далеким от мира IT, объяснить простыми словами что, как и почему. </p>
                                 <div class="reviews__border"></div>
                                 <div class="reviews__user">
                                     <div class="reviews__user-photo">
-                                        <img src="./assets/img/Xh7_OmZKwzQ.jpg" alt="" class="reviews__user-photo-item">
+                                        <img src="https://sun9-29.userapi.com/impg/jw0eZw1KzCz0-rozRvmQOWO5xtpcCZ6c2kDdsw/Xh7_OmZKwzQ.jpg?size=1000x1000&quality=95&sign=e65bfa52f31f0950fddd391455f043a0&type=album" alt="" class="reviews__user-photo-item">
                                     </div>
                                     <div class="reviews__userdata">
                                         <div class="reviews__username">asocility1over</div>
@@ -211,11 +211,11 @@
                                 </div>
                             </li>
                             <li class="reviews__list-item">
-                                <p class="reviews__text">As a product manager sometimes you need to “design” a little to express your ideas more clearly to the team. I used to make poorly-designed “wireframes” that where too basic to be used on a presentation. To use Figma or other tools will take too much time. For that reason Aaply is the perfect choice for me, because it allows me to do so easily, generating a nice prototype without much effort.</p>
+                                <p class="reviews__text"> Компания отличная, а сотрудники просто сокровище. Это та сама компания, которых осталось совсем мало, где идеально реализовано сочетание человечности и профессионализма. Ребята работают быстро, чётко. Адаптируются под проект заказчика. Работаю с ребятами не первый раз.</p>
                                 <div class="reviews__border"></div>
                                 <div class="reviews__user">
                                     <div class="reviews__user-photo">
-                                        <img src="./assets/img/photo_2023-04-30_12-49-18.jpg" alt="" class="reviews__user-photo-item">
+                                        <img src="https://static16.tgcnt.ru/posts/_0/6e/6e8ac49a9cf5a6194ae27059f5872635.jpg" alt="" class="reviews__user-photo-item">
                                     </div>
                                     <div class="reviews__userdata">
                                         <div class="reviews__username">Григорий Черемисов</div>
@@ -224,19 +224,11 @@
                                 </div>
                             </li>
                             <li class="reviews__list-item">
-                                <p class="reviews__text">Люблю отчизну я, 
-                                    Но странною любовью.
-                                    Не победит её рассудок мой.
-                                    Ни слава, купленная кровью,
-                                    Ни полный гордого доверия покой,
-                                    Ни темной старины заветные предания
-                                    Не шевелят во мне отрадного мечтания.
-                                    Но я люблю, за что не знаю сам
-                                    Её степей холодное молчание</p>
+                            <p class="reviews__text">Продвигают сайт автозапчастей уже не первый год. Много работы уже было сделано. Претензии с нашей стороны тоже возникали, но всегда удавалось их решить мирно и быстро. </p>
                                 <div class="reviews__border"></div>
                                 <div class="reviews__user">
                                     <div class="reviews__user-photo">
-                                        <img src="./assets/img/photo_2023-04-24_00-54-09.jpg" alt="" class="reviews__user-photo-item">
+                                        <img src="./assets/img/photo_2023-04-24_00-54-09.webp" alt="" class="reviews__user-photo-item">
                                     </div>
                                     <div class="reviews__userdata">
                                         <div class="reviews__username">Иван Першин</div>
@@ -277,7 +269,7 @@
                             <li class="work__list-item">
                                 <a href="" class="work__list-link">
                                     <div class="work__image">
-                                        <img src="./assets/img/upload_image_2022_09_Oblozhka.jpg" alt="" class="work__image-item">
+                                        <img src="https://mahog.ru/cache/img/480x480_0_0_0/upload_image_2022_09_Oblozhka.jpg" alt="" class="work__image-item">
                                     </div>
                                     <div class="work__desc">
                                         <h5 class="work__subtitle">Интернет-магазин</h5>
@@ -289,7 +281,7 @@
                             <li class="work__list-item">
                                 <a href="" class="work__list-link">
                                     <div class="work__image">
-                                        <img src="./assets/img/upload_image_2022_09_oblozhka_2.png" alt="" class="work__image-item">
+                                        <img src="https://mahog.ru/cache/img/480x480_0_0_0/upload_image_2022_09_oblozhka_2.png" alt="" class="work__image-item">
                                     </div>
                                     <div class="work__desc">
                                         <h5 class="work__subtitle">Корпоративный сайт</h5>
@@ -301,7 +293,7 @@
                             <li class="work__list-item">
                                 <a href="" class="work__list-link">
                                     <div class="work__image">
-                                        <img src="./assets/img/upload_image_2022_09_oblozhka_1.png" alt="" class="work__image-item">
+                                        <img src="https://mahog.ru/cache/img/480x480_0_0_0/upload_image_2022_09_oblozhka_1.png" alt="" class="work__image-item">
                                     </div>
                                     <div class="work__desc">
                                         <h5 class="work__subtitle">Корпоративный сайт</h5>
@@ -313,7 +305,7 @@
                             <li class="work__list-item">
                                 <a href="" class="work__list-link">
                                     <div class="work__image">
-                                        <img src="./assets/img/upload_image_2022_09_oblozhka.png" alt="" class="work__image-item">
+                                        <img src="https://mahog.ru/cache/img/480x480_0_0_0/upload_image_2022_09_oblozhka.png" alt="" class="work__image-item">
                                     </div>
                                     <div class="work__desc">
                                         <h5 class="work__subtitle">Интернет-магазин</h5>
@@ -325,48 +317,48 @@
                             <li class="work__list-item">
                                 <a href="" class="work__list-link">
                                     <div class="work__image">
-                                        <img src="./assets/img/upload_image_2022_09_oblozhka.png" alt="" class="work__image-item">
+                                        <img src="https://mahog.ru/cache/img/480x480_0_0_0/upload_image_2022_09_Oblozhka-min.jpg" alt="" class="work__image-item">
                                     </div>
                                     <div class="work__desc">
-                                        <h5 class="work__subtitle">Интернет-магазин</h5>
+                                        <h5 class="work__subtitle">Корпоративный сайт</h5>
                                         <div class="work__border"></div>
-                                        <h4 class="work__title">CAAS</h4>
+                                        <h4 class="work__title">60 ЛЕТ ОМСКИЙ КАУЧУК</h4>
                                     </div>
                                 </a>
                             </li>
                             <li class="work__list-item">
                                 <a href="" class="work__list-link">
                                     <div class="work__image">
-                                        <img src="./assets/img/upload_image_2022_09_oblozhka.png" alt="" class="work__image-item">
+                                        <img src="https://mahog.ru/cache/img/480x480_0_0_0/upload_image_2021_11_truby-promo_1.jpg" alt="" class="work__image-item">
                                     </div>
                                     <div class="work__desc">
-                                        <h5 class="work__subtitle">Интернет-магазин</h5>
+                                        <h5 class="work__subtitle">Корпоративный сайт</h5>
                                         <div class="work__border"></div>
-                                        <h4 class="work__title">CAAS</h4>
+                                        <h4 class="work__title">МЕТАЛЛУРГИЧЕСКАЯ КОМПАНИЯ "ОМК"</h4>
                                     </div>
                                 </a>
                             </li>
                             <li class="work__list-item">
                                 <a href="" class="work__list-link">
                                     <div class="work__image">
-                                        <img src="./assets/img/upload_image_2022_09_oblozhka.png" alt="" class="work__image-item">
+                                        <img src="https://mahog.ru/cache/img/480x480_0_0_0/upload_image_2019_11_titan-bg.jpg" alt="" class="work__image-item">
                                     </div>
                                     <div class="work__desc">
-                                        <h5 class="work__subtitle">Интернет-магазин</h5>
+                                        <h5 class="work__subtitle">Корпоративный сайт</h5>
                                         <div class="work__border"></div>
-                                        <h4 class="work__title">CAAS</h4>
+                                        <h4 class="work__title">ГРУППА КОМПАНИЙ "ТИТАН"</h4>
                                     </div>
                                 </a>
                             </li>
                             <li class="work__list-item">
                                 <a href="" class="work__list-link">
                                     <div class="work__image">
-                                        <img src="./assets/img/upload_image_2022_09_oblozhka.png" alt="" class="work__image-item">
+                                        <img src="https://mahog.ru/cache/img/480x480_0_0_0/upload_image_2021_11_grad-promo_1.jpg" alt="" class="work__image-item">
                                     </div>
                                     <div class="work__desc">
-                                        <h5 class="work__subtitle">Интернет-магазин</h5>
+                                        <h5 class="work__subtitle">Корпоративный сайт</h5>
                                         <div class="work__border"></div>
-                                        <h4 class="work__title">CAAS</h4>
+                                        <h4 class="work__title">ИНСТИТУТ ТЕРРИТОРИАЛЬНОГО</h4>
                                     </div>
                                 </a>
                             </li>
