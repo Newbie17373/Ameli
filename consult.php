@@ -24,14 +24,14 @@ try {
     $mail->isSMTP();                                            //Send using SMTP
     $mail->Host       = 'smtp.mail.ru';                     //Set the SMTP server to send through
     $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
-    $mail->Username   = 'studio.business@mail.ru';                     //SMTP username
-    $mail->Password   = 'YEpEcBcvprKfUq85X3qg';                               //SMTP password
+    $mail->Username   = 'studio.ameli@mail.ru';                     //SMTP username
+    $mail->Password   = 'czP40uKLGpiGG3rSZHu4';                               //SMTP password
     $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;            //Enable implicit TLS encryption
     $mail->Port       = 465;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
 
     //Recipients
-    $mail->setFrom('studio.business@mail.ru', 'Клиент-отправитель');
-    $mail->addAddress('hometv11413@gmail.com', 'Joe User');     //Add a recipient
+    $mail->setFrom('studio.ameli@mail.ru', 'Клиент-отправитель');
+    $mail->addAddress('studio.ameli304@gmail.com', 'Joe User');     //Add a recipient
     // $mail->addAddress('ellen@example.com');               //Name is optional
     // $mail->addReplyTo('info@example.com', 'Information');
     // $mail->addCC('cc@example.com');
