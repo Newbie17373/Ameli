@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1:3306
--- Время создания: Июн 09 2023 г., 00:25
+-- Время создания: Июн 09 2023 г., 16:13
 -- Версия сервера: 10.8.4-MariaDB
 -- Версия PHP: 8.0.22
 
@@ -36,13 +36,6 @@ CREATE TABLE `reviews` (
   `service` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
---
--- Дамп данных таблицы `reviews`
---
-
-INSERT INTO `reviews` (`index`, `login`, `review`, `image`, `nickname`, `service`) VALUES
-(18, 'Tyler_Durden', 'Великолепная компания, я считаю, заказывал у них услугу по созданию сайта и мне все понравилось, великолепно сверстали ребята, желаю удачи и творческих успехов, ах да, сверстали отлично, но дизайн еще лучше, их дизайнеры просто золото, до скорого!', 'https://www.rainforest-alliance.org/wp-content/uploads/2021/06/capybara-square-1.jpg.optimal.jpg', 'sobaka_pavlova124', 'Создание сайтов');
-
 -- --------------------------------------------------------
 
 --
@@ -66,7 +59,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`login`, `email`, `name`, `surname`, `password`, `nickname`, `user_photo`, `last_review_time`, `count`) VALUES
-('Tyler_Durden', 'danil@gmail.com', 'Tyler', 'Арестович', '$2y$10$gq/F7PyfZCwWv9QACeHCHOnmivbZcTChloMj/JCmhxEWcZ14GdLoS', 'sobaka_pavlova124', 'https://www.rainforest-alliance.org/wp-content/uploads/2021/06/capybara-square-1.jpg.optimal.jpg', '2023-06-08 23:36:47', 1);
+('Tyler_Durden', 'danil@gmail.com', 'Артемий', 'Лебедев', '$2y$10$gq/F7PyfZCwWv9QACeHCHOnmivbZcTChloMj/JCmhxEWcZ14GdLoS', 'sobaka_pavlova124', 'https://www.rainforest-alliance.org/wp-content/uploads/2021/06/capybara-square-1.jpg.optimal.jpg', '2023-06-09 13:34:02', 0);
 
 --
 -- Индексы сохранённых таблиц
@@ -94,7 +87,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT для таблицы `reviews`
 --
 ALTER TABLE `reviews`
-  MODIFY `index` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `index` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- Ограничения внешнего ключа сохраненных таблиц
