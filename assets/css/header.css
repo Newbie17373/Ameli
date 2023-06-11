@@ -187,6 +187,12 @@
   padding: 6px;
 }
 
+@media (max-width: 1200px) {
+  .header__list-link {
+    line-height: 3rem;
+  }
+}
+
 .header__list-link:hover {
   color: var(--subpurple-color);
 }

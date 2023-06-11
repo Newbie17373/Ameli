@@ -201,11 +201,13 @@ body {
 
 .passView {
   position: absolute;
-  left: 10.8px;
+  left: 12.1px;
   top: 42%;
   background-color: var(--input-clr-hover);
   display: none;
   font-size: 0.75rem;
+  font-weight: 400;
+  letter-spacing: 0.06rem;
 }
 
 .registration__password:hover .passView {
