@@ -10,6 +10,7 @@ if(isset($_SESSION['login'])) die(header('Location: ./index.php'));
     <title>WS Амели</title>
     <link rel="stylesheet" href="./assets/css/registration.css">
     <script src="./assets/js/validation.js" defer></script>
+    <script src="./assets/js/passView.js" defer></script>
 </head>
 <body>
     <div class="wrapper">
@@ -86,32 +87,32 @@ if(isset($_SESSION['login'])) die(header('Location: ./index.php'));
             <div class="registration">
                     <div class="registration__inside container">
                         <a href="./index.php" class="registation__close">&#215;</a>
-                        <div class="registration__logo">
+                        <a href="./index.php" class="registration__logo">
                             <img src="./assets/img/logos/logo.svg" alt="" class="registration__logo-item">
-                        </div>
+                        </a>
                         <div class="registration__border"></div>
                         <h5 class="registration__subtitle about__title">Регистрация</h5>
                         <form action="" class="registration__form" name="registrationForm" method="post">
                         <?php if(isset($smsg)){ ?><span class="registration__msg registration__msg_successful"><?php echo $smsg ?></span><?php }?>
                         <?php if(isset($fmsg)){ ?><span class="registration__msg registration__msg_unsuccessful"><?php echo $fmsg ?></span><?php }?>
                             <p class="registration__text registration__text_first prices__description">Ваш логин</p>
-                            <input type="text" class="registration__input" name="login" placeholder="example" required pattern="[A-Za-z]{9-40}" minlength="9" maxlength="40" value="">
+                            <input type="text" class="registration__input" name="login" placeholder="Example" required pattern="[A-z0-9_.-]{6,40}" minlength="9" maxlength="40" value="">
                             <p class="registration__text prices__description">Ваша почта</p>
-                            <input type="email" class="registration__input" name="email" placeholder="example@gmail.com" required pattern="[A-Za-z]{9-60}" minlength="9" maxlength="60" value="">
+                            <input type="email" class="registration__input" name="email" placeholder="example123@gmail.com" required pattern="([A-z0-9_.-]{1,})@([A-z0-9_.-]{1,}).([A-z]{2,8})" minlength="9" maxlength="60" value="">
                             <p class="registration__text prices__description">Ваш номер телефона</p>
                             <input type="tel" class="order__input registration__input" name="user_phone" placeholder="89136798698" required pattern="[0-9]{11}" minlength="11" maxlength="11">
                             <p class="registration__text prices__description">Ваше имя</p>
-                            <input type="text" class="registration__input" name="name" placeholder="Александр" required pattern="[А-Яа-я]{3-40}" minlength="3" maxlength="40" value="">
+                            <input type="text" class="registration__input" name="name" placeholder="Александр" required pattern="[А-Яа-я]{3,40}" minlength="3" maxlength="40" value="">
                             <p class="registration__text prices__description">Ваша фамилия</p>
-                            <input type="text" class="registration__input" name="surname" placeholder="Иванов" required pattern="[А-Яа-я]{6-40}" minlength="6" maxlength="40"  value="">
+                            <input type="text" class="registration__input" name="surname" placeholder="Иванов" required pattern="[А-Яа-я]{6,40}" minlength="6" maxlength="40"  value="">
                             <p class="registration__text prices__description">Ваш псеводоним</p>
-                            <input type="text" class="registration__input" name="nickname" placeholder="Alex2003" required pattern="[А-Яа-я]{4-40}" minlength="4" maxlength="40"  value="">
+                            <input type="text" class="registration__input" name="nickname" placeholder="Alex2003" required pattern="[A-z0-9_.-]{4,40}" minlength="4" maxlength="40"  value="">
                             <p class="registration__text prices__description">Прямая ссылка на ваше фото</p>
                             <input type="text" class="order__input registration__input order__input_photo" name="user_photo" placeholder="https://site/images/capybara.jpg" value="">
                             <p class="registration__text prices__description">Ваш пароль</p>
-                            <input type="password" class="registration__input registration__input_password" name="password" type="password" placeholder="S9Scap$iDPRZ" required pattern="[A-Za-z]{8-16}" minlength="8" maxlength="16" value="">
+                            <div class="registration__password"><input type="password" class="registration__input registration__input_password registration__pass" name="password" type="password" placeholder="S9Scap$iDPRZ" required pattern="[0-9a-zA-Z]{8,16}" minlength="8" maxlength="16" value=""><span class="passView"></span></div>
                             <p class="registration__text prices__description">Повторите ваш пароль</p>
-                            <input type="password" class="registration__input registration__input_password-repeat" type="password" placeholder="S9Scap$iDPRZ" required pattern="[A-Za-z][0-9]{8-16}" minlength="8" maxlength="16" value="">
+                            <div class="registration__password"><input type="password" class="registration__input registration__input_password-repeat registration__pass" type="password" placeholder="S9Scap$iDPRZ" required pattern="[0-9a-zA-Z]{8-16}" minlength="8" maxlength="16" value=""><span class="passView"></span></div>
                             <a class="registration__button-wrapper"><input type="submit" class="registration__button" value="Зарегистрироваться"></a>
                             <div class="registration__link">
                                 <span>Уже есть аккаунт? <a href="./authentification.php" class="registration__link-item"><span>Войти.</span></a></span>

@@ -43,19 +43,19 @@
                             <h3 class="prices__subtitle">4 услуги оказываемые веб-студией:</h3>
                         </div>
                         <ul class="prices__list">
-                            <li class="prices__list-item">
+                            <li class="prices__list-item button-order">
                                 <h4 class="prices__title">Контекстная реклама</h4>
                                 <p class="prices__description">от 15 000 Р</p>
                             </li>
-                            <li class="prices__list-item">
+                            <li class="prices__list-item button-order">
                                 <h4 class="prices__title">Создание сайтов</h4>
                                 <p class="prices__description">от 60 000 Р</p>
                             </li>
-                            <li class="prices__list-item">
+                            <li class="prices__list-item button-order">
                                 <h4 class="prices__title">Комплексный аудит</h4>
                                 <p class="prices__description">от 30 000 Р</p>
                             </li>
-                            <li class="prices__list-item">
+                            <li class="prices__list-item button-order">
                                 <h4 class="prices__title">Продвижение сайта</h4>
                                 <p class="prices__description">от 35 000 Р</p>
                             </li>
@@ -234,7 +234,7 @@
                                 <div class="reviews__border"></div>
                                 <div class="reviews__user">
                                     <div class="reviews__user-photo">
-                                        <img src="./assets/img/photo_2023-04-24_00-54-09.webp" alt="" class="reviews__user-photo-item">
+                                        <img src="https://sun9-34.userapi.com/impg/IKjhsPK_cYnUnUK01efAyo2XpzVTkK8jyYitYQ/_2cWMlXMc8Y.jpg?size=917x1049&quality=95&sign=9b290702c3c33cc18611ee57e4398e22&type=album" alt="" class="reviews__user-photo-item">
                                     </div>
                                     <div class="reviews__userdata">
                                         <div class="reviews__username">Иван Першин</div>
@@ -290,7 +290,7 @@
                             // Цикл для отображения всех отзывов
                             foreach ($result2 as $row2) {
                             echo "<li class='work__list-item'>";
-                            echo "<a href='' class='work__list-link'>";
+                            echo "<a href='" . $row2['link'] . "' class='work__list-link' target='_blank'>";
                             echo "<div class='work__image'>";
                             echo "<img src='" . $row2['img'] . "' alt='' class='work__image-item'>";
                             echo "</div>";
@@ -303,7 +303,7 @@
                             echo "</li>";
                     }?>
                              <li class="work__list-item">
-                                <a href="" class="work__list-link">
+                                <a href="https://www.youtube.com/watch?v=mw1Yt4XL-5M" class="work__list-link" target="_blank">
                                     <div class="work__image">
                                         <img src="https://mahog.ru/cache/img/480x480_0_0_0/upload_image_2022_09_Oblozhka.jpg" alt="" class="work__image-item">
                                     </div>
@@ -315,7 +315,7 @@
                                 </a>
                             </li>
                             <li class="work__list-item">
-                                <a href="" class="work__list-link">
+                                <a href="https://www.youtube.com/watch?v=mw1Yt4XL-5M" class="work__list-link" target="_blank">
                                     <div class="work__image">
                                         <img src="https://mahog.ru/cache/img/480x480_0_0_0/upload_image_2022_09_oblozhka_2.png" alt="" class="work__image-item">
                                     </div>
@@ -360,9 +360,9 @@
                                 </a>
                         <p class="footer__rights">® Амели 2023 - Все права защищены</p>
                         <ul class="footer___docs">
-                            <li class="footer__docs-item"><a href="https://policies.google.com/privacy" class="footer__docs-link">Политика конфиденциальности</a></li>
-                            <li class="footer__docs-item"><a href="https://policies.google.com/terms" class="footer__docs-link">Условия продажи</a></li>
-                            <li class="footer__docs-item"><a href="https://policies.google.com/terms" class="footer__docs-link">Защита данных</a></li>
+                            <li class="footer__docs-item"><a href="https://policies.google.com/privacy" class="footer__docs-link" target="_blank">Политика конфиденциальности</a></li>
+                            <li class="footer__docs-item"><a href="https://policies.google.com/terms" class="footer__docs-link" target="_blank">Условия продажи</a></li>
+                            <li class="footer__docs-item"><a href="https://policies.google.com/terms" class="footer__docs-link" target="_blank">Защита данных</a></li>
                         </ul>
                     </div>
                 </div>
@@ -376,7 +376,7 @@
                         <a href="#contacts" class="footer__list-link">Контакты</a>
                             <ul class="footer__socials">
                                 <li class="footer__socials-item">
-                                    <a href="https://t.me/ameli" class="footer__socials-link">
+                                    <a href="https://t.me/hero2249" class="footer__socials-link" target="_blank">
                                         <div class="footer__image">
                                             <img src="./assets/img/logos/telegram.svg" alt="" class="footer__image-item">
                                         </div>
@@ -384,7 +384,7 @@
                                     </a>
                                 </li>
                                 <li class="footer__socials-item">
-                                    <a href="https://github.com/Newbie17373" class="footer__socials-link">
+                                    <a href="https://github.com/Newbie17373" class="footer__socials-link" target="_blank">
                                         <div class="footer__image">
                                             <img src="./assets/img/logos/github.svg" alt="" class="footer__image-item">
                                         </div>

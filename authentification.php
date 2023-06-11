@@ -9,6 +9,7 @@ if(isset($_SESSION['login'])) die(header('Location: ./index.php'));
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>WS Амели</title>
     <link rel="stylesheet" href="./assets/css/registration.css">
+    <script src="./assets/js/passView.js" defer></script>
 </head>
 <body>
     <div class="wrapper">
@@ -62,9 +63,9 @@ if(isset($_SESSION['login'])) die(header('Location: ./index.php'));
                     <?php if(isset($smsg)){ ?><span class="registration__msg registration__msg_successful"><?php echo $smsg ?></span><?php }?>
                     <?php if(isset($fmsg)){ ?><span class="registration__msg registration__msg_unsuccessful"><?php echo $fmsg ?></span><?php }?>
                         <p class="registration__text registration__text_first prices__description">Ваш логин</p>
-                        <input type="text" class="registration__input" name="login" placeholder="example" minlength="9" maxlength="40" require>
+                        <input type="text" class="registration__input" name="login" placeholder="example" required pattern="[A-z0-9_.-]{6,40}" minlength="9" maxlength="40" value="">
                         <p class="registration__text prices__description">Ваш пароль</p>
-                        <input type="password" class="registration__input" name="password" type="password" placeholder="S9Scap$iDPRZ" minlength="8" maxlength="16" require>
+                        <div class="registration__password"><input type="password" class="registration__input registration__pass" name="password" type="password" placeholder="S9Scap$iDPRZ" required pattern="[0-9a-zA-Z]{8,16}" minlength="8" maxlength="16" value=""><span class="passView"></span></div>
                         <button class="registration__button" type="submit">Войти</button>
                         <div class="registration__link">
                             <span>Нет учетной записи? <a href="./registration.php" class="registration__link-item"><span>Создайте её.</span></a></span>

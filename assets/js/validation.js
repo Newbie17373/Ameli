@@ -4,46 +4,21 @@ let regBtn = document.querySelector(".registration__button");
 let regBrnWrp = document.querySelector(".registration__button-wrapper");
 let pass = document.querySelector(".registration__input_password");
 let passRepeat = document.querySelector(".registration__input_password-repeat");
-let counter = 0;
-console.log(typeof orderInputPht.value);
+regBtn.disabled = true;
 
-if (counter === 0) {
-  for (i = 0; i < arrInputs.length; i++) {
-    arrInputs[i].value.length < 1 ? counter++ : counter--;
-  }
-
-  counter === -arrInputs.length
-    ? (regBtn.disabled = false)
-    : (regBtn.disabled = true);
-  counter = 0;
-}
-
-for (i = 0; i < arrInputs.length; i++) {
-  arrInputs[i].addEventListener("change", () => {
-    counter = 0;
-    for (i = 0; i < arrInputs.length; i++) {
-      arrInputs[i].value.length < 1 ? counter++ : counter--;
-    }
-    counter === -arrInputs.length + 2 &&
+regBrnWrp.addEventListener("mouseover", () => {
+  if (
     pass.value === passRepeat.value &&
-    (orderInputPht.value === "" || orderInputPht.value != "")
-      ? (regBtn.disabled = false)
-      : (regBtn.disabled = true);
-  });
-}
-
-console.log(regBtn.disabled);
-
-regBtn.addEventListener("mouseout", () => {
-  if (orderInputPht.value != "") counter += 2;
-  if (counter === -arrInputs.length + 2 && pass.value === passRepeat.value) {
+    pass.value.length > 0 &&
+    passRepeat.value.length > 0
+  ) {
     regBtn.disabled = false;
   } else {
     if (regBtn.disabled != false) {
-      (regBtn.disabled = true),
-        alert(
-          "Поля формы пустые и/или неправильно введен подтверждающий пароль."
-        );
+      regBtn.disabled = true;
+      alert(
+        "Поля формы пустые и/или неправильно введен подтверждающий пароль."
+      );
     }
   }
 });

@@ -45,7 +45,8 @@ input {
 }
 
 header,
-footer {
+footer,
+.passView {
   user-select: none;
   -moz-user-select: none;
   -webkit-user-select: none;

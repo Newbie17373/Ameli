@@ -55,7 +55,7 @@
                             <div class="header__personal-area">
                             <ul class="header__buttons">
                                 <li class="header__buttons-item">
-                                <a href="<?php echo $_SESSION['user_photo']?>" class="header__userphoto reviews__user-photo">
+                                <a href="<?php echo $_SESSION['user_photo']?>" class="header__userphoto reviews__user-photo" target="_blank">
                                     <img src='<?php echo $_SESSION['user_photo']?>' alt="" class="header__userphoto-item reviews__user-photo-item">
                                 </a>
                                 <span class="header__username"><?php echo $_SESSION['nickname']?></span>
