@@ -64,7 +64,7 @@ if (isset($_POST['reviews_text']) && isset($_POST['user_service'])) {
     $stmt->execute([$login]);
 
     // Перенаправление после выполнения операции
-    exit(header('Location: ../../index.php'));
+    exit(header('Location: ../../index.php#reviews'));
 }
 ?>
 

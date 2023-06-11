@@ -1,7 +1,7 @@
-@import url(./reset.css);
-@import url(./fonts.css);
-@import url(./global.css);
 @import url(./variables.css);
+@import url(./fonts.css);
+@import url(./reset.css);
+@import url(./global.css);
 @import url(./header.css);
 @import url(./footer.css);
 @import url(./popup.css);
@@ -666,7 +666,7 @@ body {
 }
 
 .reviews__list::-webkit-scrollbar {
-  width: 0;
+  height: 12.5px;
 }
 
 .reviews__list-item {
@@ -820,7 +820,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  overflow-x: auto;
+  overflow: overlay;
   -ms-overflow-style: none;
   scrollbar-width: none;
   height: 100%;
@@ -830,14 +830,14 @@ body {
   width: 100%;
 }
 
+.work__list::-webkit-scrollbar {
+  height: 12.5px;
+}
+
 @media (max-width: 576px) {
   .work__list {
     padding: 0;
   }
-}
-
-.work__list::-webkit-scrollbar {
-  width: 0;
 }
 
 .work__list-item {

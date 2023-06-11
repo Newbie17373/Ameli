@@ -58,3 +58,21 @@ footer,
   /* color: ; */
   background-color: var(--selection-clr);
 }
+
+::-webkit-scrollbar {
+  width: 12.5px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--black);
+  box-shadow: rgba(0, 0, 0, 0.2) inset;
+  border-radius: 41px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--prices-bg);
+  box-shadow: rgba(0, 0, 0, 0.2) inset;
+  border-radius: 41px;
+  margin: 2px;
+  border: 3px solid var(--max-purlpe);
+}
