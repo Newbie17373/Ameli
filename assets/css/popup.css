@@ -1,7 +1,8 @@
 .order,
 .consult,
 .survey,
-.alert {
+.alert,
+.survey__update {
   width: 100%;
   display: none;
   opacity: 0%;
@@ -20,7 +21,8 @@
 .order.active,
 .consult.active,
 .survey.active,
-.alert.active {
+.alert.active,
+.survey__update.active {
   display: flex;
   opacity: 100%;
   visibility: visible;
@@ -89,6 +91,10 @@
   line-height: inherit;
 }
 
+.order__textarea_edit {
+  color: var(--font-color);
+}
+
 .order__input {
   width: 100%;
   font-size: 1rem !important;
@@ -110,3 +116,5 @@
   font-size: 1rem !important;
   line-height: 1rem !important;
 }
+
+.

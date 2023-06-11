@@ -5,11 +5,16 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Официальный сайт Ameli Web Studio. Ameli WS.">
+    <meta name="keywords" content="Ameli Web Studio, Официальный сайт Ameli Web Studio, Ameli WS, ameli, веб-студия амели, студия амели, веб-студия амели омск">
     <title>WS Амели</title>
     <link rel="stylesheet" href="./assets/css/index.css">
     <script src="./assets/js/burger.js" defer></script>
     <script src="./assets/js/popup.js" defer></script>
-    <?php if(isset($_SESSION['login'])) {?><script defer src="./assets/js/popupReviews.js"></script><?php }?>
+    <?php if(isset($_SESSION['login'])) {?><script src="./assets/js/popupReviews.js" defer></script><?php }?>
+    <?php if(isset($_SESSION['login'])) {?><script src="./assets/js/deleteReview.js" defer></script><?php }?>
+    <?php if(isset($_SESSION['login'])) {?><script src="./assets/js/changeReview.js" defer></script><?php }?>
+    
 </head>
 <body>
     <div class="wrapper" id="main">
@@ -17,6 +22,7 @@
         require './vendor/components/order.php';
         require './vendor/components/consult.php';
         require './vendor/components/survey.php';
+        require './vendor/components/surveyUpdate.php';
         require './vendor/components/header.php';
         ?>
         <main class="main">
@@ -254,6 +260,15 @@
                             echo "<div class='reviews__userdata'>";
                             echo "<div class='reviews__username'>" . $row['nickname'] . "</div>";
                             echo "<div class='reviews__userservice'>" . $row['service'] . "</div>";
+                            if(isset($_SESSION['login'])) {
+                                if ($_SESSION['login'] === $row['login']) {
+                                    // Отзыв создан текущим пользователем
+                                    // Ваш код для добавления кнопки удаления
+                                    
+                                    echo "<button class='reviews__delete-btn registation__close' onclick='deleteReview(" . $row['index'] . ")'>&#10060;</button>";
+                                    echo "<button class='reviews__edit-btn edit-form' onclick='setId(" . $row['index'] . ")'><img class='reviews__edit-btn-item' src='https://cdn-icons-png.flaticon.com/512/1024/1024092.png' alt='' style='max-width: 100%;'></button>";
+                                }
+                            }
                             echo "</div>";
                             echo "</div>";
                             echo "</li>";
@@ -266,7 +281,28 @@
                     <div class="works__inside container">
                         <h4 class="work__header technologies__heading">Наши работы</h4>
                         <ul class="work__list">
-                            <li class="work__list-item">
+                            <?php 
+                            require "./vendor/components/connect.php";
+                    
+                            $sql2 = "SELECT * FROM works";
+                            $result2 = mysqli_query($conn, $sql2);
+                    
+                            // Цикл для отображения всех отзывов
+                            foreach ($result2 as $row2) {
+                            echo "<li class='work__list-item'>";
+                            echo "<a href='' class='work__list-link'>";
+                            echo "<div class='work__image'>";
+                            echo "<img src='" . $row2['img'] . "' alt='' class='work__image-item'>";
+                            echo "</div>";
+                            echo "<div class='work__desc'>";
+                            echo "<h5 class='work__subtitle'>" . $row2['type'] . "</h5>";
+                            echo "<div class='work__border'></div>";
+                            echo "<h4 class='work__title'>" . $row2['title'] . "</h4>";
+                            echo "</div>";
+                            echo "</a>";
+                            echo "</li>";
+                    }?>
+                             <li class="work__list-item">
                                 <a href="" class="work__list-link">
                                     <div class="work__image">
                                         <img src="https://mahog.ru/cache/img/480x480_0_0_0/upload_image_2022_09_Oblozhka.jpg" alt="" class="work__image-item">
@@ -287,78 +323,6 @@
                                         <h5 class="work__subtitle">Корпоративный сайт</h5>
                                         <div class="work__border"></div>
                                         <h4 class="work__title">Титан-смазочные материалы</h4>
-                                    </div>
-                                </a>
-                            </li>
-                            <li class="work__list-item">
-                                <a href="" class="work__list-link">
-                                    <div class="work__image">
-                                        <img src="https://mahog.ru/cache/img/480x480_0_0_0/upload_image_2022_09_oblozhka_1.png" alt="" class="work__image-item">
-                                    </div>
-                                    <div class="work__desc">
-                                        <h5 class="work__subtitle">Корпоративный сайт</h5>
-                                        <div class="work__border"></div>
-                                        <h4 class="work__title">ЖК "ЗЕЛЕНЫЙ ОСТРОВ"</h4>
-                                    </div>
-                                </a>
-                            </li>
-                            <li class="work__list-item">
-                                <a href="" class="work__list-link">
-                                    <div class="work__image">
-                                        <img src="https://mahog.ru/cache/img/480x480_0_0_0/upload_image_2022_09_oblozhka.png" alt="" class="work__image-item">
-                                    </div>
-                                    <div class="work__desc">
-                                        <h5 class="work__subtitle">Интернет-магазин</h5>
-                                        <div class="work__border"></div>
-                                        <h4 class="work__title">CAAS</h4>
-                                    </div>
-                                </a>
-                            </li>
-                            <li class="work__list-item">
-                                <a href="" class="work__list-link">
-                                    <div class="work__image">
-                                        <img src="https://mahog.ru/cache/img/480x480_0_0_0/upload_image_2022_09_Oblozhka-min.jpg" alt="" class="work__image-item">
-                                    </div>
-                                    <div class="work__desc">
-                                        <h5 class="work__subtitle">Корпоративный сайт</h5>
-                                        <div class="work__border"></div>
-                                        <h4 class="work__title">60 ЛЕТ ОМСКИЙ КАУЧУК</h4>
-                                    </div>
-                                </a>
-                            </li>
-                            <li class="work__list-item">
-                                <a href="" class="work__list-link">
-                                    <div class="work__image">
-                                        <img src="https://mahog.ru/cache/img/480x480_0_0_0/upload_image_2021_11_truby-promo_1.jpg" alt="" class="work__image-item">
-                                    </div>
-                                    <div class="work__desc">
-                                        <h5 class="work__subtitle">Корпоративный сайт</h5>
-                                        <div class="work__border"></div>
-                                        <h4 class="work__title">МЕТАЛЛУРГИЧЕСКАЯ КОМПАНИЯ "ОМК"</h4>
-                                    </div>
-                                </a>
-                            </li>
-                            <li class="work__list-item">
-                                <a href="" class="work__list-link">
-                                    <div class="work__image">
-                                        <img src="https://mahog.ru/cache/img/480x480_0_0_0/upload_image_2019_11_titan-bg.jpg" alt="" class="work__image-item">
-                                    </div>
-                                    <div class="work__desc">
-                                        <h5 class="work__subtitle">Корпоративный сайт</h5>
-                                        <div class="work__border"></div>
-                                        <h4 class="work__title">ГРУППА КОМПАНИЙ "ТИТАН"</h4>
-                                    </div>
-                                </a>
-                            </li>
-                            <li class="work__list-item">
-                                <a href="" class="work__list-link">
-                                    <div class="work__image">
-                                        <img src="https://mahog.ru/cache/img/480x480_0_0_0/upload_image_2021_11_grad-promo_1.jpg" alt="" class="work__image-item">
-                                    </div>
-                                    <div class="work__desc">
-                                        <h5 class="work__subtitle">Корпоративный сайт</h5>
-                                        <div class="work__border"></div>
-                                        <h4 class="work__title">ИНСТИТУТ ТЕРРИТОРИАЛЬНОГО</h4>
                                     </div>
                                 </a>
                             </li>

@@ -55,8 +55,11 @@
                             <div class="header__personal-area">
                             <ul class="header__buttons">
                                 <li class="header__buttons-item">
+                                <a href="<?php echo $_SESSION['user_photo']?>" class="header__userphoto reviews__user-photo">
+                                    <img src='<?php echo $_SESSION['user_photo']?>' alt="" class="header__userphoto-item reviews__user-photo-item">
+                                </a>
+                                <span class="header__username"><?php echo $_SESSION['nickname']?></span>
                                     <a href="./vendor/components/logout.php" class="header__button-link">
-                                        <span class="header__username"><?php echo $_SESSION['name']?> <?php echo $_SESSION['surname']?></span>
                                         <button class="header__button header__button_sign-in intro__button_purple"><span>Выйти</span></button>
                                     </a>
                                 </li>

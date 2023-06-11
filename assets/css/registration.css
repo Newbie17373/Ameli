@@ -23,6 +23,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  margin: 30px 0px;
 }
 
 .registration__inside {
@@ -116,6 +117,7 @@ body {
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  margin-bottom: 20px;
 }
 
 .registration__msg {
@@ -161,6 +163,15 @@ body {
 .registration__input:focus {
   background-color: var(--input-clr-hover);
   outline: 1px solid var(--subpurple-color);
+}
+
+.registration__button-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  position: relative;
+  z-index: 1;
 }
 
 .registration__button {

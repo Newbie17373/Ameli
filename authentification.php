@@ -1,4 +1,6 @@
-<?php session_start()?>
+<?php session_start();
+if(isset($_SESSION['login'])) die(header('Location: ./index.php'));
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,7 +14,7 @@
     <div class="wrapper">
     <?php
         require './vendor/components/connect.php';
-
+        
         if(isset($_POST['login']) && isset($_POST['password'])) {
             $login = $_POST['login'];
             $password = $_POST['password'];
@@ -34,16 +36,17 @@
                         $_SESSION['email'] = $user['email'];
                         $_SESSION['nickname'] = $user['nickname'];
                         $_SESSION['user_photo'] = $user['user_photo'];
+                        $_SESSION['user_phone'] = $user['user_phone'];
                         $smsg = "Вы успешно вошли";
+                        header("Location: ./index.php");
                     }
                     else {
                         $fmsg = "Был введен неверный логин или пароль";
                     }
             }
             else {
-                $fmsg = "Был введен неверный логин или пароль";
+                $fmsg = "Такого пользователя не существует";
             }
-            header("Location: ./index.php");
         }
         ?>
         <main class="main">
