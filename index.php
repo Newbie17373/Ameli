@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="./assets/css/index.css">
     <script src="./assets/js/burger.js" defer></script>
     <script src="./assets/js/popup.js" defer></script>
+    <script src="./assets/js/scroll.js" defer></script>
     <?php if(isset($_SESSION['login'])) {?><script src="./assets/js/popupReviews.js" defer></script><?php }?>
     <?php if(isset($_SESSION['login'])) {?><script src="./assets/js/deleteReview.js" defer></script><?php }?>
     <?php if(isset($_SESSION['login'])) {?><script src="./assets/js/changeReview.js" defer></script><?php }?>
@@ -202,7 +203,7 @@
                 <div class="reviews" id="reviews">
                     <div class="reviews__inside container">
                         <h4 class="reviews__heading technologies__heading">Наши отзывы</h4>
-                        <ul class="reviews__list">
+                        <ul id = "example" class="reviews__list">
                             <li class="reviews__list-item">
                                 <p class="reviews__text">Достаточно продолжительное время искали хорошую, ответственную компанию по аудиту нашего сайта и привлечения потока клиентов. Такую, чтобы там были специалисты по всем профилям. Хотелось, чтобы люди знали своё дело, но в то же время могли нам, простым обывателям, далеким от мира IT, объяснить простыми словами что, как и почему. </p>
                                 <div class="reviews__border"></div>

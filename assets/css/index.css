@@ -650,6 +650,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: flex-start;
+  flex-direction: row-reverse;
   gap: 24px;
   height: 100%;
   overflow: overlay;
