@@ -40,16 +40,23 @@
   transition: all 0.25s linear 0s;
 }
 
-.order__area {
+.order__area,
+html.area {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  z-index: 6;
+  z-index: 7;
   background-color: var(--selection-clr);
   backdrop-filter: blur(5px);
   cursor: pointer;
+}
+
+html.area {
+  backdrop-filter: blur(0px);
+  background: none;
+  z-index: 5;
 }
 
 .order__form {
@@ -60,7 +67,7 @@
   justify-content: center;
   flex-direction: column;
   position: relative;
-  z-index: 6;
+  z-index: 7;
   padding: 50px;
   border-radius: 41px;
   transition: all 0.25s linear 0s;
@@ -89,6 +96,8 @@
   color: var(--desctiption-text-color);
   font-family: inherit;
   line-height: inherit;
+  line-height: 3.25rem;
+  padding: 10.5px !important;
 }
 
 .order__textarea_edit {

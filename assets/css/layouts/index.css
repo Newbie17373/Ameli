@@ -1,10 +1,10 @@
-@import url(./variables.css);
-@import url(./fonts.css);
-@import url(./reset.css);
-@import url(./global.css);
-@import url(./header.css);
-@import url(./footer.css);
-@import url(./popup.css);
+@import url(../variables.css);
+@import url(../fonts.css);
+@import url(../reset.css);
+@import url(../global.css);
+@import url(../components/header.css);
+@import url(../components/footer.css);
+@import url(../components/popup.css);
 @import url(./registration.css);
 
 body {
@@ -596,7 +596,7 @@ body {
   align-items: center;
   justify-content: center;
   width: 100%;
-  background: url(../img/AztpQfyT_4x.webp) 0 0 / cover no-repeat scroll;
+  background: url(../../img/AztpQfyT_4x.webp) 0 0 / cover no-repeat scroll;
   height: 100%;
   margin-bottom: 128px;
 }
@@ -623,6 +623,19 @@ body {
   }
 }
 
+.reviews__controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 13.5px;
+  position: relative;
+  flex-wrap: wrap;
+}
+
+.reviews__group {
+  position: relative;
+}
+
 .reviews__button {
   display: flex;
   align-items: center;
@@ -640,6 +653,23 @@ body {
   box-shadow: inset 0 0.25px 0px 1.25px var(--purple-circle),
     0 0.25px 0px 1.25px var(--purple-circle);
   color: var(--font-color);
+}
+
+.reviews__controls-menu {
+  position: absolute;
+  top: -256.5% !important;
+  right: -33.5% !important;
+  display: flex;
+  align-items: center;
+  justify-content: center !important;
+  flex-direction: column;
+  gap: 33.5px !important;
+}
+
+.reviews__controls-menu_positive,
+.reviews__controls-menu_negative,
+.reviews__controls-menu_usual {
+  margin: 0;
 }
 
 .reviews__heading {
@@ -679,6 +709,7 @@ body {
   flex-direction: column;
   min-width: 370px;
   height: 580px;
+  /* height: 692.5px; */
   border-radius: 40px;
   max-width: calc(400 / 1903 * 100%);
 }
@@ -755,15 +786,61 @@ body {
 .reviews__userservice {
   font-size: 1rem;
   line-height: 1.4375rem;
+  font-family: "Poppins", sans-serif;
   font-family: "Inter", sans-serif;
   font-weight: 400;
   letter-spacing: -0.03125rem;
 }
 
-.reviews__delete-btn,
-.reviews__edit-btn {
+.reviews__mark {
+  font-size: 1rem;
+  line-height: 1.3375rem;
+  font-family: "Poppins", sans-serif;
+  /* font-family: "Inter", sans-serif; */
+  font-weight: 400;
+  letter-spacing: -0.03125rem;
+}
+
+.reviews__menu {
   position: absolute;
   right: 0;
+  font-size: 2rem !important;
+  color: var(--font-color);
+  aspect-ratio: 1/1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  filter: invert(grayscale(100%));
+  z-index: 5;
+}
+
+.reviews__buttons {
+  background-color: var(--theme-panel);
+  aspect-ratio: 1/1;
+  position: absolute;
+  top: -102.5px;
+  right: -35px;
+  font-size: 1.6rem !important;
+  color: var(--font-color);
+  aspect-ratio: 1/1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+  gap: 5px;
+  border-radius: 5px;
+  padding: 20px;
+  border: 1px solid var(--input-clr);
+  z-index: 5;
+  display: none;
+}
+
+.reviews__buttons.active {
+  display: flex;
+}
+
+.reviews__delete-btn,
+.reviews__edit-btn {
   font-size: 1.6rem !important;
   color: #000;
   aspect-ratio: 1/1;
@@ -771,13 +848,17 @@ body {
   align-items: center;
   justify-content: center;
   filter: invert(grayscale(100%));
+  right: 0;
 }
 
 .reviews__edit-btn {
-  position: absolute;
-  right: 3px !important;
-  bottom: 0;
-  width: 1.7rem;
+  width: 35.55px;
+  aspect-ratio: 1/1;
+  padding: 3.5px;
+  justify-self: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .reviews__edit-btn-item {
@@ -906,6 +987,7 @@ body {
   text-transform: uppercase;
   font-size: 1.2rem;
   font-weight: 700;
+  text-align: center;
 }
 
 .contacts {
