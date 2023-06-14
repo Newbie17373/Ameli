@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Спасибо</title>
-    <link rel="stylesheet" href="./assets/css/index.css">
+    <link rel="stylesheet" href="./assets/css/layouts/index.css">
 </head>
 <body>
     <div class="wrapper" style="justify-content: center; align-items: center; text-align: center; gap: 30px;">

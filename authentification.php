@@ -7,8 +7,10 @@ if(isset($_SESSION['login'])) die(header('Location: ./index.php'));
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; media-src 'none'; object-src 'none'; font-src 'self';">
     <title>WS Амели</title>
-    <link rel="stylesheet" href="./assets/css/registration.css">
+    <link rel="stylesheet" href="./assets/css/layouts/registration.css">
+    <link rel="icon" href="./assets/img/logos/favicon.svg" />
     <script src="./assets/js/passView.js" defer></script>
 </head>
 <body>
@@ -30,7 +32,7 @@ if(isset($_SESSION['login'])) die(header('Location: ./index.php'));
                 $stmt2->execute([$login]);
                 $user = $stmt2->fetch(PDO::FETCH_ASSOC);
 
-                    if ($user && password_verify($password, $user['password'])) {
+                    if ($user && password_verify($password, $user['password']) && $user['status'] === 'verified') {
                         $_SESSION['login'] = $login;
                         $_SESSION['name'] = $user['name'];
                         $_SESSION['surname'] = $user['surname'];
@@ -40,6 +42,9 @@ if(isset($_SESSION['login'])) die(header('Location: ./index.php'));
                         $_SESSION['user_phone'] = $user['user_phone'];
                         $smsg = "Вы успешно вошли";
                         header("Location: ./index.php");
+                    }
+                    else if ($user['status'] === 'unverified') {
+                        $fmsg = "Пожалуйста, подтвердите свою почту для завершения регистрации";
                     }
                     else {
                         $fmsg = "Был введен неверный логин или пароль";

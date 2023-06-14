@@ -12,6 +12,11 @@ regBrnWrp.addEventListener("mouseover", () => {
     pass.value.length > 0 &&
     passRepeat.value.length > 0
   ) {
+    if (regBtn.disabled != false) {
+      alert(
+        "Пожалуйста, после нажатия на кнопку - 'Зарегистрироваться', подтвердите свою почту для завершения регистрации"
+      );
+    }
     regBtn.disabled = false;
   } else {
     if (regBtn.disabled != false) {

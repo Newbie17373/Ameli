@@ -7,15 +7,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Официальный сайт Ameli Web Studio. Ameli WS.">
     <meta name="keywords" content="Ameli Web Studio, Официальный сайт Ameli Web Studio, Ameli WS, ameli, веб-студия амели, студия амели, веб-студия амели омск">
-    <title>WS Амели</title>
-    <link rel="stylesheet" href="./assets/css/index.css">
+    <title>Амели</title>
+    <link rel="stylesheet" href="./assets/css/layouts/registration.css">
+    <link rel="stylesheet" href="./assets/css/layouts/index.css">
+    <link rel="icon" href="./assets/img/logos/favicon.svg" />
     <script src="./assets/js/burger.js" defer></script>
     <script src="./assets/js/popup.js" defer></script>
     <script src="./assets/js/scroll.js" defer></script>
+    <script src="./assets/js/menu.js" defer></script>
     <?php if(isset($_SESSION['login'])) {?><script src="./assets/js/popupReviews.js" defer></script><?php }?>
-    <?php if(isset($_SESSION['login'])) {?><script src="./assets/js/deleteReview.js" defer></script><?php }?>
-    <?php if(isset($_SESSION['login'])) {?><script src="./assets/js/changeReview.js" defer></script><?php }?>
-    
+    <?php if(isset($_SESSION['login'])) {?><script src="./assets/js/ajax/deleteReview.js" defer></script><?php }?>
+    <?php if(isset($_SESSION['login'])) {?><script src="./assets/js/ajax/changeReview.js" defer></script><?php }?>
+    <script src="./assets/js/ajax/getReviews.js" defer></script>
 </head>
 <body>
     <div class="wrapper" id="main">
@@ -98,7 +101,7 @@
                     <div class="advertisement__inside container">
                         <div class="advertisement__part advertisement__part_first">
                             <h4 class="advertisement__heading technologies__heading">реклама в Google и Яндекс</h4>
-                            <h3 class="advertisement__subtitle">Контекстная реклама.</h3>
+                            <h3 class="advertisement__subtitle">Контекстная реклама</h3>
                             <p class="advertisement__description prices__description">
                                 Контекстная реклама Яндекс. Директ и Google <br> Adwords – это самый быстрый способ привести<br> потенциальных клиентов на Ваш сайт. <br> Контекстная реклама в Google и Яндекс позволит <br> Вам оплачивать только реальные переходы <br> целевых пользователей и отслеживать <br> эффективность расхода бюджета до копейки.
                             </p>
@@ -117,7 +120,7 @@
                     <div class="advertisement__inside container">
                         <div class="advertisement__part advertisement__part_first">
                             <h4 class="advertisement__heading technologies__heading">разработка</h4>
-                            <h3 class="advertisement__subtitle">Создание сайта.</h3>
+                            <h3 class="advertisement__subtitle">Создание сайта</h3>
                             <p class="advertisement__description prices__description">
                                 Мы предлагаем не просто разработку сайта, а <br>создание полноценного канала продаж через <br>Интернет, который будет настроен под специфику <br> Вашего бизнеса, независимо от цены <br>разрабатываемого проекта. Создание сайтов для<br> нас - это не просто работа. Мы всегда стремимся <br> вложить максимум своего опыта и умений в <br> проекты наших клиентов, чтобы добиваться <br> внушительных результатов. 
                             </p>
@@ -136,7 +139,7 @@
                     <div class="advertisement__inside container">
                         <div class="advertisement__part advertisement__part_first">
                             <h4 class="advertisement__heading technologies__heading">аудит</h4>
-                            <h3 class="advertisement__subtitle">Комплексный аудит.</h3>
+                            <h3 class="advertisement__subtitle">Комплексный аудит</h3>
                             <p class="advertisement__description prices__description">
                                 Если Ваш сайт не приносит прибыль, нет <br> посетителей и заказов, а на первой странице <br> поисковиков находятся Ваши конкуренты, у Вас <br> проблемы. Выявить и решить их поможет аудит <br> сайта. Заказав аудит сайта, Вы узнаете, что нужно <br> доработать на сайте, чтобы он начал помогать <br> Вашему бизнесу.
                             </p>
@@ -155,7 +158,7 @@
                     <div class="advertisement__inside container">
                         <div class="advertisement__part advertisement__part_first">
                             <h4 class="advertisement__heading technologies__heading">продвижение</h4>
-                            <h3 class="advertisement__subtitle">Продвижение сайта.</h3>
+                            <h3 class="advertisement__subtitle">Продвижение сайта</h3>
                             <p class="advertisement__description prices__description">
                                 Продвинем ваш сайт в топ-10 Яндекса и Google. <br> Увеличим посещаемость. Увеличим количество <br> звонков и заявок.
                             </p>
@@ -173,8 +176,7 @@
                 <div class="about" id="about">
                     <div class="about__inside">
                         <h4 class="about__heading technologies__heading">О нас</h4>
-                        <h3 class="about__title"><span>Амели</span></h3>
-                        <p class="about__info">это диджитал-компания с возможностями собственных it-разработок и <br> комплексного интернет-маркетинга. Мы помогаем бизнесу развиваться, <br> обеспечивая его цифровыми решениями и новыми клиентами. Мы <br> развиваем Web-разработку и инструменты SEO-оптимизации, контекста, <br> таргетинга и комплексной аналитики. За 16 лет мы пережили 3 <br> экономических кризиса в нашей стране и одну пандемию, и точно знаем, <br> что наш продукт будет востребован всегда! В нашем бэкграунде более 5000 <br> созданных и продвинутых сайтов для бизнеса различного масштаба и <br> профиля, более 600 постоянных клиентов и 180 сотрудников в команде <br> веб-студии Амели!</p>
+                        <p class="about__info">это диджитал-компания с возможностями собственных it-разработок и <br> комплексного интернет-маркетинга. Мы помогаем бизнесу развиваться, <br> обеспечивая его цифровыми решениями и новыми клиентами. Мы <br> развиваем Web-разработку и инструменты SEO-оптимизации, контекста, <br> таргетинга и комплексной аналитики. </p>
                     <ul class="about__list">    
                         <li class="about__list-item">
                             <div class="about__image"><img src="./assets/img/logos/bigExpirience.svg" alt="" class="about__image-item"></div>
@@ -203,79 +205,20 @@
                 <div class="reviews" id="reviews">
                     <div class="reviews__inside container">
                         <h4 class="reviews__heading technologies__heading">Наши отзывы</h4>
-                        <ul id = "example" class="reviews__list">
-                            <li class="reviews__list-item">
-                                <p class="reviews__text">Достаточно продолжительное время искали хорошую, ответственную компанию по аудиту нашего сайта и привлечения потока клиентов. Такую, чтобы там были специалисты по всем профилям. Хотелось, чтобы люди знали своё дело, но в то же время могли нам, простым обывателям, далеким от мира IT, объяснить простыми словами что, как и почему. </p>
-                                <div class="reviews__border"></div>
-                                <div class="reviews__user">
-                                    <div class="reviews__user-photo">
-                                        <img src="https://sun9-29.userapi.com/impg/jw0eZw1KzCz0-rozRvmQOWO5xtpcCZ6c2kDdsw/Xh7_OmZKwzQ.jpg?size=1000x1000&quality=95&sign=e65bfa52f31f0950fddd391455f043a0&type=album" alt="" class="reviews__user-photo-item">
-                                    </div>
-                                    <div class="reviews__userdata">
-                                        <div class="reviews__username">asocility1over</div>
-                                        <div class="reviews__userservice">Комплексный аудит</div>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="reviews__list-item">
-                                <p class="reviews__text"> Компания отличная, а сотрудники просто сокровище. Это та сама компания, которых осталось совсем мало, где идеально реализовано сочетание человечности и профессионализма. Ребята работают быстро, чётко. Адаптируются под проект заказчика. Работаю с ребятами не первый раз.</p>
-                                <div class="reviews__border"></div>
-                                <div class="reviews__user">
-                                    <div class="reviews__user-photo">
-                                        <img src="https://static16.tgcnt.ru/posts/_0/6e/6e8ac49a9cf5a6194ae27059f5872635.jpg" alt="" class="reviews__user-photo-item">
-                                    </div>
-                                    <div class="reviews__userdata">
-                                        <div class="reviews__username">Григорий Черемисов</div>
-                                        <div class="reviews__userservice">Разработка сайта</div>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="reviews__list-item">
-                            <p class="reviews__text">Продвигают сайт автозапчастей уже не первый год. Много работы уже было сделано. Претензии с нашей стороны тоже возникали, но всегда удавалось их решить мирно и быстро. </p>
-                                <div class="reviews__border"></div>
-                                <div class="reviews__user">
-                                    <div class="reviews__user-photo">
-                                        <img src="https://sun9-34.userapi.com/impg/IKjhsPK_cYnUnUK01efAyo2XpzVTkK8jyYitYQ/_2cWMlXMc8Y.jpg?size=917x1049&quality=95&sign=9b290702c3c33cc18611ee57e4398e22&type=album" alt="" class="reviews__user-photo-item">
-                                    </div>
-                                    <div class="reviews__userdata">
-                                        <div class="reviews__username">Иван Першин</div>
-                                        <div class="reviews__userservice">Продвижение сайта</div>
-                                    </div>
-                                </div>
-                            </li>
-                            <?php 
-                            require "./vendor/components/connect.php";
-                    
-                            $sql = "SELECT * FROM reviews";
-                            $result = mysqli_query($conn, $sql);
-                    
-                            // Цикл для отображения всех отзывов
-                            foreach ($result as $row) {
-                            echo "<li class='reviews__list-item'>";
-                            echo "<p class='reviews__text'>" . $row['review'] . "</p>";
-                            echo "<div class='reviews__border'></div>";
-                            echo "<div class='reviews__user'>";
-                            echo "<div class='reviews__user-photo'>";
-                            echo "<img src='" . $row['image'] . "' alt='' class='reviews__user-photo-item'>";
-                            echo "</div>";
-                            echo "<div class='reviews__userdata'>";
-                            echo "<div class='reviews__username'>" . $row['nickname'] . "</div>";
-                            echo "<div class='reviews__userservice'>" . $row['service'] . "</div>";
-                            if(isset($_SESSION['login'])) {
-                                if ($_SESSION['login'] === $row['login']) {
-                                    // Отзыв создан текущим пользователем
-                                    // Ваш код для добавления кнопки удаления
-                                    
-                                    echo "<button class='reviews__delete-btn registation__close' onclick='deleteReview(" . $row['index'] . ")'>&#10060;</button>";
-                                    echo "<button class='reviews__edit-btn edit-form' onclick='setId(" . $row['index'] . ")'><img class='reviews__edit-btn-item' src='https://cdn-icons-png.flaticon.com/512/1024/1024092.png' alt='' style='max-width: 100%;'></button>";
-                                }
-                            }
-                            echo "</div>";
-                            echo "</div>";
-                            echo "</li>";
-                    }?>
+                        <ul class="reviews__list">
+                           
                         </ul>
-                        <?php if(isset($_SESSION['login'])) {?><button class="reviews__button advertisement__button survey-button">Написать отзыв</button><?php }?>
+                        <div class='reviews__controls'>
+                                <?php if(isset($_SESSION['login'])) {?><button class="reviews__button advertisement__button survey-button">Написать отзыв</button><?php }?>
+                                        <div class="reviews__group">
+                                        <button class="reviews__button advertisement__button survey-button-filter">&#8793; Оценки</button>
+                                    <div class="reviews__controls-menu reviews__buttons">
+                                        <button class="reviews__button advertisement__button reviews__controls-menu_positive" data-type="positive">Положительные</button>
+                                        <button class="reviews__button advertisement__button reviews__controls-menu_negative" data-type="negative">Отрицательные</button>
+                                        <button class="reviews__button advertisement__button reviews__controls-menu_usual" data-type="all">Все</button>
+                                    </div>
+                                </div>
+                            </div>
                     </div>
                 </div>
                 <div class="works" id="works">

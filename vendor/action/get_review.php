@@ -22,7 +22,8 @@ if ($review) {
   $response = [
     'success' => true,
     'reviewText' => $review['review'],
-    'userService' => $review['service']
+    'userService' => $review['service'],
+    'userMark' => $review['mark']
   ];
 } else {
   // Отзыв не найден

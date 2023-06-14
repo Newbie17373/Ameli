@@ -4,7 +4,7 @@ function deleteReview(reviewId) {
   var xhr = new XMLHttpRequest();
 
   // Устанавливаем метод запроса и URL для отправки AJAX-запроса
-  xhr.open("POST", "../vendor/action/delete_review.php", true);
+  xhr.open("POST", "../../vendor/action/delete_review.php", true);
 
   // Устанавливаем заголовок Content-Type для передачи данных в формате JSON
   xhr.setRequestHeader("Content-Type", "application/json");

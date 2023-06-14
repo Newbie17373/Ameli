@@ -7,10 +7,13 @@ if(isset($_SESSION['login'])) die(header('Location: ./index.php'));
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WS Амели</title>
-    <link rel="stylesheet" href="./assets/css/registration.css">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; media-src 'none'; object-src 'none'; font-src 'self';">
+    <title>Амели</title>
+    <link rel="stylesheet" href="./assets/css/layouts/registration.css">
+    <link rel="icon" href="./assets/img/logos/favicon.svg" />
     <script src="./assets/js/validation.js" defer></script>
     <script src="./assets/js/passView.js" defer></script>
+    <script src="./assets/js/file.js" defer></script>
 </head>
 <body>
     <div class="wrapper">
@@ -24,37 +27,50 @@ if(isset($_SESSION['login'])) die(header('Location: ./index.php'));
 
     // Стандартное фото профиля
     $defaultImg = "https://www.pravilamag.ru/upload/img_cache/e8a/e8a0c5d3cefffee703a2d9a58cde797e_ce_1080x673x0x23_cropped_666x444.jpg";
+    $filePathInDb = '';
+
+        if(isset($_POST['login']) && isset($_POST['password']) && isset($_POST['email']) && isset($_POST['nickname']) && isset($_FILES['user_photo'])) {
+
+                        // Проверяем, был ли отправлен файл
+                        if(isset($_FILES['user_photo'])) {
+                        $file = $_FILES['user_photo'];
     
-         function checkExt($arrExt, $str) {
-        foreach($arrExt as $value) {
-        if(strripos($str = (string)$str, $value)) return true;
-            }
-        }   
+                        // Проверяем размер файла
+                        $maxFileSize = 2 * 1024 * 1024; // 2MB (в байтах)
+                        if ($file['size'] > $maxFileSize) {
+                            echo 'Размер файла превышает допустимый лимит (2MB). Пожалуйста, выберите файл меньшего размера.';
+                        }
 
-         function chckImg($str, $arrExt, $defaultImg) {
-         if(strlen($str) <= 0) {
-        return $defaultImg;
-        }
-        else if (checkExt($arrExt, $str)){
-        return $str;
-        }
-        else {
-        return $defaultImg;
-        }
-        }
+                        // Генерируем уникальное имя файла
+                        $fileName = uniqid() . '_' . $file['name'];
 
-        if(isset($_POST['login']) && isset($_POST['password']) && isset($_POST['email']) && isset($_POST['nickname']) && isset($_POST['user_photo']) && isset($_POST['user_phone'])) {
+                        // Путь сохранения файла
+                        $uploadPath = './assets/img/users_photos/' . $fileName;
+
+                        // Перемещаем файл в указанную папку
+                        if(move_uploaded_file($file['tmp_name'], $uploadPath)) {
+                            // Файл успешно загружен, можно сохранить путь в базу данных
+                            $filePathInDb = './assets/img/users_photos/' . $fileName;
+                            // Далее сохраняйте $filePathInDb в столбец user_photo таблицы users или делайте с ним то, что вам нужно
+                            echo 'Файл успешно загружен.';
+                        } else {
+                            $fmsg = 'Ошибка при загрузке файла. ';
+                        }
+                    } else {
+                        $filePathInDb = $defaultImg;
+                    }
             $login = filter_var($_POST['login'], FILTER_SANITIZE_STRING);
             $email = filter_var($_POST['email'], FILTER_SANITIZE_STRING);
             $name = filter_var($_POST['name'], FILTER_SANITIZE_STRING);
-            $surname = filter_var($_POST['surname'], FILTER_SANITIZE_STRING);
             $password = filter_var($_POST['password'], FILTER_SANITIZE_STRING);
             $nickname = filter_var($_POST['nickname'], FILTER_SANITIZE_STRING);
-            $user_photo = filter_var(chckImg($_POST['user_photo'], $arrExt, $defaultImg), FILTER_SANITIZE_STRING);
+            $user_photo = filter_var($filePathInDb, FILTER_SANITIZE_STRING);
             $user_phone = filter_var($_POST['user_phone'], FILTER_SANITIZE_STRING);
+            $verification_code = uniqid();
+            $hashedVerification_code = password_hash($verification_code, PASSWORD_DEFAULT);
             $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
             
-            if ($login != "" && $email != "" && $name != "" && $surname != "" && $password != "" && $nickname != "" && $user_photo != "" && $user_phone != "") {
+            if ($login != "" && $email != "" && $name != "" && $password != "" && $nickname != "" && $user_photo != "" && $user_phone != "" && $verification_code != "") {
                 $query1 = "SELECT * FROM users WHERE login = ?";
                 $stmt = $pdo->prepare($query1);
                 $stmt->execute([$login]);
@@ -63,23 +79,31 @@ if(isset($_SESSION['login'])) die(header('Location: ./index.php'));
                 $stmt = $pdo->prepare($query2);
                 $stmt->execute([$nickname]);
                 $count += $stmt->rowCount();
+                $query3 = "SELECT * FROM users WHERE email = ?";
+                $stmt = $pdo->prepare($query3);
+                $stmt->execute([$email]);
+                $count += $stmt->rowCount();
             }
             else {
                 $count = null;
             }
 
             if($count > 0) {
-                $fmsg = "Такой никнейм или логин заняты";
+                $fmsg .= "Такой никнейм, почта или логин заняты. ";
             }
             else if($count === null){
-                $fmsg = "Одно или несколько полей формы пустые";
+                $fmsg .= "Одно или несколько полей формы пустые. ";
             }
             else {
-                $query3 = "INSERT INTO users (login, email, name, surname, password , nickname, user_photo, user_phone) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
+                $query3 = "INSERT INTO users (login, email, name, password , nickname, user_photo, user_phone, status, verification_code, original_verification_code) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
                 $stmt = $pdo->prepare($query3); 
-                $stmt->execute([$login, $email, $name, $surname, $hashedPassword, $nickname, $user_photo, $user_phone]);
+                $stmt->execute([$login, $email, $name, $hashedPassword, $nickname, $user_photo, $user_phone, 'unverified', $hashedVerification_code, $verification_code]);
+                $to = $email;
+                $subject = "Подтверждение адреса электронной почты";
+                $message = "Добро пожаловать! Пожалуйста, перейдите по ссылке для подтверждения вашего адреса электронной почты:  http://localhost/vendor/action/verify.php?code=$hashedVerification_code";
+                $headers = "From: studio.ameli@mail.ru";
+                require "./vendor/action/send_verification_code.php";
                 $smsg = "Регистрация прошла успешно";
-                header('Location: ./index.php');
             }
         }
         ?>
@@ -92,7 +116,7 @@ if(isset($_SESSION['login'])) die(header('Location: ./index.php'));
                         </a>
                         <div class="registration__border"></div>
                         <h5 class="registration__subtitle about__title">Регистрация</h5>
-                        <form action="" class="registration__form" name="registrationForm" method="post">
+                        <form action="" class="registration__form" name="registrationForm" method="post" enctype="multipart/form-data">
                         <?php if(isset($smsg)){ ?><span class="registration__msg registration__msg_successful"><?php echo $smsg ?></span><?php }?>
                         <?php if(isset($fmsg)){ ?><span class="registration__msg registration__msg_unsuccessful"><?php echo $fmsg ?></span><?php }?>
                             <p class="registration__text registration__text_first prices__description">Ваш логин</p>
@@ -103,12 +127,14 @@ if(isset($_SESSION['login'])) die(header('Location: ./index.php'));
                             <input type="tel" class="order__input registration__input" name="user_phone" placeholder="89136798698" required pattern="[0-9]{11}" minlength="11" maxlength="11">
                             <p class="registration__text prices__description">Ваше имя</p>
                             <input type="text" class="registration__input" name="name" placeholder="Александр" required pattern="[А-Яа-я]{3,40}" minlength="3" maxlength="40" value="">
-                            <p class="registration__text prices__description">Ваша фамилия</p>
-                            <input type="text" class="registration__input" name="surname" placeholder="Иванов" required pattern="[А-Яа-я]{6,40}" minlength="6" maxlength="40"  value="">
                             <p class="registration__text prices__description">Ваш псеводоним</p>
                             <input type="text" class="registration__input" name="nickname" placeholder="Alex2003" required pattern="[A-z0-9_.-]{4,40}" minlength="4" maxlength="40"  value="">
-                            <p class="registration__text prices__description">Прямая ссылка на ваше фото</p>
-                            <input type="text" class="order__input registration__input order__input_photo" name="user_photo" placeholder="https://site/images/capybara.jpg" value="">
+                            <p class="registration__text prices__description">Ваше фото профиля</p>
+                            <label class="order__input registration__input-photo">
+                            <input type="file" class="order__input registration__input registration__input-photo-item" accept=".jpeg, .jfif, .jpg, .JPG, .JPE, .bmp, .dib, .rle, .gif" name="user_photo" value="" onchange="showFileName(this)">
+                            <span class="order__input-file-btn">Выберите файл</span> 
+                            <span class="order__input-text">Максимум 2мб</span>
+                            </label>
                             <p class="registration__text prices__description">Ваш пароль</p>
                             <div class="registration__password"><input type="password" class="registration__input registration__input_password registration__pass" name="password" type="password" placeholder="S9Scap$iDPRZ" required pattern="[0-9a-zA-Z]{8,16}" minlength="8" maxlength="16" value=""><span class="passView"></span></div>
                             <p class="registration__text prices__description">Повторите ваш пароль</p>

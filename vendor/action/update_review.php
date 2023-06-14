@@ -7,12 +7,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   $reviewId = $_POST['id'];
   $updatedReviewText = $_POST['reviewText'];
   $updatedUserService = $_POST['userService'];
+  $updatedUserMark = $_POST['userMark'];
 
   // Выполните запрос к базе данных для обновления отзыва
-  $sql = "UPDATE reviews SET review = :reviewText, service = :userService WHERE `index` = :id";
+  $sql = "UPDATE reviews SET review = :reviewText, service = :userService, mark = :userMark WHERE `index` = :id";
   $stmt = $pdo->prepare($sql);
   $stmt->bindParam(':reviewText', $updatedReviewText, PDO::PARAM_STR);
   $stmt->bindParam(':userService', $updatedUserService, PDO::PARAM_STR);
+  $stmt->bindParam(':userMark', $updatedUserMark, PDO::PARAM_STR);
   $stmt->bindParam(':id', $reviewId, PDO::PARAM_INT);
   $stmt->execute();
 

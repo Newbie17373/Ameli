@@ -16,9 +16,10 @@ function isAllowedToPostReview($lastReviewTime) {
     return ($currentTime - $lastReviewTimestamp) >= $interval;
 }
 
-if (isset($_POST['reviews_text']) && isset($_POST['user_service'])) {
+if (isset($_POST['reviews_text']) && isset($_POST['user_service']) && isset($_POST['user_mark'])) {
     $reviews_text = filter_var($_POST['reviews_text'], FILTER_SANITIZE_STRING);
     $user_service = filter_var($_POST['user_service'], FILTER_SANITIZE_STRING);
+    $user_mark = filter_var($_POST['user_mark'], FILTER_SANITIZE_STRING);
     
     $login = $_SESSION['login'];
     $nickname = $_SESSION['nickname'];
@@ -49,9 +50,9 @@ if (isset($_POST['reviews_text']) && isset($_POST['user_service'])) {
     }
 
     // Добавление отзыва в таблицу `reviews`
-    $query = "INSERT INTO reviews (login, review, image, service, nickname) VALUES (?, ?, ?, ?, ?)";
+    $query = "INSERT INTO reviews (login, review, image, service, nickname, mark) VALUES (?, ?, ?, ?, ?, ?)";
     $stmt = $pdo->prepare($query);
-    $stmt->execute([$login, $reviews_text, $user_photo, $user_service, $nickname]);
+    $stmt->execute([$login, $reviews_text, $user_photo, $user_service, $nickname, $user_mark]);
 
     // Увеличение счетчика отзывов пользователя
     $query = "UPDATE users SET count = count + 1 WHERE login = ?";

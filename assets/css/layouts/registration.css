@@ -254,11 +254,11 @@ body {
 
 .passView {
   position: absolute;
-  left: 12.1px;
-  top: 42%;
+  left: 12px;
+  top: 40%;
   background-color: var(--input-clr-hover);
   display: none;
-  font-size: 0.75rem;
+  font-size: 0.95rem;
   font-weight: 400;
   letter-spacing: 0.06rem;
 }
