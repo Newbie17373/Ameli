@@ -105,7 +105,7 @@ body {
 }
 
 .registration__subtitle {
-  font-size: 1rem;
+  font-size: 1.2rem;
   line-height: 1.575rem;
   font-weight: 400;
   margin-bottom: 5px;
@@ -152,7 +152,7 @@ body {
   border-radius: 6px;
   padding: 0 10.5px;
   font-weight: 400;
-  font-size: 0.75rem;
+  font-size: 0.95rem;
   background-color: var(--input-clr) !important;
   position: relative;
   display: flex;
@@ -177,6 +177,57 @@ body {
 .registration__input:invalid {
   /* outline: 0.2px solid var(--red-circle); */
   background-color: var(--input-clr) !important;
+}
+
+.registration__input-photo {
+  display: block;
+  position: relative !important;
+  margin: 0;
+  height: 52.5px;
+  color: var(--desctiption-text-color);
+  font-size: 0.75rem;
+}
+
+.registration__input-photo-item {
+  height: 100%;
+}
+
+.order__input-file-btn {
+  position: absolute;
+  top: 0.5rem;
+  left: 0;
+  height: 52.5px;
+  background-color: var(--purple-circle);
+  border-radius: 6px;
+  width: 30%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--font-color);
+  padding: 5px;
+  font-size: 0.95rem;
+}
+.order__input-file-btn:hover {
+  background-color: var(--font-color);
+  color: var(--black);
+}
+
+.order__input-text {
+  position: absolute;
+  height: 52.5px;
+  right: 0;
+  top: 0.5rem;
+  width: 70%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px;
+  background-color: var(--input-clr);
+  border-radius: 6px;
+  word-wrap: break-word;
+  overflow-wrap: anywhere;
+  word-spacing: normal;
+  font-size: 0.75rem;
 }
 
 .registration__password {

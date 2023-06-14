@@ -4,7 +4,7 @@ footer {
   justify-content: center;
   width: 100%;
   background-color: var(--theme-panel);
-  padding: 20px 92px 20px 116px;
+  padding: 3rem 92px 20px 116px;
 }
 
 @media (max-width: 768px) {

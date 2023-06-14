@@ -41,6 +41,6 @@ body.scroll_off {
 
 @media (max-width: 1200px) {
   .container {
-    max-width: calc(1380 / 1512 * 100%);
+    max-width: calc(1320 / 1512 * 100%);
   }
 }

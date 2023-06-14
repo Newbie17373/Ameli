@@ -1,11 +1,10 @@
-@import url(../variables.css);
-@import url(../fonts.css);
-@import url(../reset.css);
-@import url(../global.css);
+@import url(./../variables.css);
+@import url(./../fonts.css);
+@import url(./../reset.css);
+@import url(./../global.css);
 @import url(../components/header.css);
-@import url(../components/footer.css);
-@import url(../components/popup.css);
-@import url(./registration.css);
+@import url(./../components/footer.css);
+@import url(./../components/popup.css);
 
 body {
   background-color: var(--black);
@@ -107,6 +106,13 @@ body {
   height: 30px;
 }
 
+@media (max-width: 1200px) {
+  .intro__button_colorless {
+    color: var(--font-color);
+    background-color: var(--theme-panel);
+  }
+}
+
 .intro__button_colorless:active::before,
 .intro__button_purple:active::before {
   content: "";
@@ -145,6 +151,12 @@ body {
   padding: 20px 108px;
 }
 
+@media (max-width: 576px) {
+  .prices {
+    padding: 20px 10px;
+  }
+}
+
 .prices__inside {
   display: flex;
   align-items: center;
@@ -153,6 +165,12 @@ body {
   padding: 20px 108px;
   gap: 48px;
   padding: 86px 40px 61px 40px;
+}
+
+@media (max-width: 576px) {
+  .prices__inside {
+    padding: 86px 10px 61px 10px;
+  }
 }
 
 .prices__head {
@@ -252,12 +270,19 @@ body {
 }
 
 .technologies__heading {
-  font-size: 0.75rem;
+  /* font-size: 0.75rem; */
+  font-size: 1.35rem;
   line-height: 1rem;
   letter-spacing: 0.125rem;
   text-align: center;
   text-transform: uppercase;
   margin-bottom: 41px;
+}
+
+@media (max-width: 576px) {
+  .technologies__heading {
+    line-height: 1.5rem;
+  }
 }
 
 .technologies__list {
@@ -305,7 +330,7 @@ body {
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
-  gap: 32px;
+  gap: 48.5px;
   padding: 0 16px;
 }
 
@@ -484,13 +509,13 @@ body {
 
 @media (max-width: 1200px) {
   .about__inside {
-    padding: 108px 10px 58px 10px;
+    padding: 104px 15px 54px 31.5px;
   }
 }
 
 .about__heading {
   margin: 0;
-  margin-bottom: 24px;
+  margin-bottom: 18px;
   background: linear-gradient(
     90deg,
     #fe6459 0%,
@@ -530,7 +555,7 @@ body {
 .about__info {
   font-size: 1.375rem;
   line-height: 2.5rem;
-  text-align: center;
+  text-align: left;
   margin-bottom: 86px;
 }
 
