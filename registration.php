@@ -38,7 +38,7 @@ if(isset($_SESSION['login'])) die(header('Location: ./index.php'));
                         // Проверяем размер файла
                         $maxFileSize = 2 * 1024 * 1024; // 2MB (в байтах)
                         if ($file['size'] > $maxFileSize) {
-                            echo 'Размер файла превышает допустимый лимит (2MB). Пожалуйста, выберите файл меньшего размера.';
+                            $fmsg = 'Размер файла превышает допустимый лимит (2MB). Пожалуйста, выберите файл меньшего размера.';
                         }
 
                         // Генерируем уникальное имя файла
@@ -52,9 +52,9 @@ if(isset($_SESSION['login'])) die(header('Location: ./index.php'));
                             // Файл успешно загружен, можно сохранить путь в базу данных
                             $filePathInDb = './assets/img/users_photos/' . $fileName;
                             // Далее сохраняйте $filePathInDb в столбец user_photo таблицы users или делайте с ним то, что вам нужно
-                            echo 'Файл успешно загружен.';
+                            $smsg = 'Файл успешно загружен.';
                         } else {
-                            $fmsg = 'Ошибка при загрузке файла. ';
+                            $filePathInDb = $defaultImg;
                         }
                     } else {
                         $filePathInDb = $defaultImg;
@@ -100,7 +100,7 @@ if(isset($_SESSION['login'])) die(header('Location: ./index.php'));
                 $stmt->execute([$login, $email, $name, $hashedPassword, $nickname, $user_photo, $user_phone, 'unverified', $hashedVerification_code, $verification_code]);
                 $to = $email;
                 $subject = "Подтверждение адреса электронной почты";
-                $message = "Добро пожаловать! Пожалуйста, перейдите по ссылке для подтверждения вашего адреса электронной почты:  http://localhost/vendor/action/verify.php?code=$hashedVerification_code";
+                $message = "Добро пожаловать " .  $nickname . "! Пожалуйста, перейдите по ссылке для подтверждения вашего адреса электронной почты:  http://localhost/vendor/action/verify.php?code=$hashedVerification_code";
                 $headers = "From: studio.ameli@mail.ru";
                 require "./vendor/action/send_verification_code.php";
                 $smsg = "Регистрация прошла успешно";
