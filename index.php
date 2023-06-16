@@ -188,7 +188,7 @@
                         <li class="about__list-item">
                             <div class="about__image"><img src="./assets/img/logos/complexApproach.svg" alt="" class="about__image-item"></div>
                             <div class="about__text">
-                            <h4 class="about__subtitle">Комплексный полход</h4>
+                            <h4 class="about__subtitle">Комплексный подход</h4>
                             <p class="about__description prices__description">Мы не просто реализуем красивый <br> дизайн, но и подготавливаем сайт к <br> дальнейшему продвижению.</p>    
                             </div>
                             </li>

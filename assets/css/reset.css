@@ -75,3 +75,9 @@ footer,
   border-radius: 41px;
   margin: 2px;
 }
+
+@media (max-width: 32px) {
+  ::-webkit-scrollbar {
+    width: fit-content;
+  }
+}

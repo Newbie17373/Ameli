@@ -121,14 +121,28 @@
 .header__logo {
 }
 
-@media (max-width: 286px) {
+@media (max-width: 315px) {
   .header__logo {
-    width: 60%;
+    width: 100%;
   }
 }
 
 .header__logo-item {
   max-width: 100%;
+}
+
+.header__logo-item_second {
+  display: none;
+}
+
+@media (max-width: 315px) {
+  .header__logo-item {
+    display: none;
+  }
+
+  .header__logo-item_second {
+    display: block;
+  }
 }
 
 .header__nav {
