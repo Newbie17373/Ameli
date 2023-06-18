@@ -3,7 +3,6 @@
                 <div class="header__part header__part_left">
                     <a href="./index.php#main" class="header__logo">  
                         <img class="header__logo-item header__logo-item_first" src="./assets/img/logos/logo.svg" alt="logo">
-                        <img class="header__logo-item header__logo-item_second" src="./assets/img/logos/logo_small.svg" alt="logo">
                     </a>
                 </div>
                 <div class="header__part header__part_mid">
