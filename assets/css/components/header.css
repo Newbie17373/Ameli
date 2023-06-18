@@ -131,12 +131,15 @@
   max-width: 100%;
 }
 
+.header__logo-item_first {
+}
+
 .header__logo-item_second {
   display: none;
 }
 
 @media (max-width: 315px) {
-  .header__logo-item {
+  .header__logo-item_first {
     display: none;
   }
 

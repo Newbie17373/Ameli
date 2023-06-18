@@ -98,9 +98,9 @@ if(isset($_SESSION['login'])) die(header('Location: ./index.php'));
                 $query3 = "INSERT INTO users (login, email, name, password , nickname, user_photo, user_phone, status, verification_code, original_verification_code) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
                 $stmt = $pdo->prepare($query3); 
                 $stmt->execute([$login, $email, $name, $hashedPassword, $nickname, $user_photo, $user_phone, 'unverified', $hashedVerification_code, $verification_code]);
+                
+                $hostNAME = 'http://a0830793.xsph.ru';
                 $to = $email;
-
-                $hostNAME = ' http://localhost';
                 $subject = "Подтверждение адреса электронной почты";
                 $message = "Добро пожаловать " .  $nickname . "! Пожалуйста, перейдите по ссылке для подтверждения вашего адреса электронной почты: " . $hostNAME . "/vendor/action/verify.php?code=$hashedVerification_code";
                 $headers = "From: studio.ameli@mail.ru";
